@@ -1,0 +1,716 @@
+% !TeX spellcheck = en_GB
+\documentclass[12pt]{article}
+
+\usepackage{amsmath}
+
+\author{Max Kasperowski}
+\title{Course Notes on Probability and Statistics}
+
+\begin{document}
+	\pagenumbering{gobble}
+	\maketitle
+	\tableofcontents
+	\newpage
+	\pagenumbering{arabic}
+	
+	\section{Miscellaneous Foundations}
+	
+	\subsection{Permutations and Combinations}
+	
+	The number of arrangements of \(n\) elements equals \(n!\).
+	
+	\noindent When taking \(r\) elements from a set of \(n\) elements, the number arrangements retaining order (permutations) is represented as:
+	
+	\begin{equation*}
+	P^{n}_{r}=\frac{n!}{(n-r)!}
+	\end{equation*}
+	
+	\noindent When not regarding the order, but merely which elements have been chosen:
+	
+	\begin{equation*}
+	C^{n}_{r}=\frac{n!}{r!\times (n-r)!}
+	\end{equation*}
+	
+	\subsection{Binomial Formula}
+	
+	The most basic binomial formula is to the second power and goes as follows.
+	
+	\begin{equation*}
+		(a+b)^2 = a^2+2ab+b^2
+	\end{equation*}
+	
+	\noindent When expanded to the \(n^{th}\) power, this is the formula.
+	
+	\begin{equation*}
+		(a+b)^n = \sum_{k=0}^{n}C^{n}_{r}\times a^k\times b^{n-k}
+	\end{equation*}
+	
+	\subsection{Sequences \& Series}
+	
+	A series is the summation of the terms of an infinite sequence.
+	
+	
+	\newpage
+	\section{Probability Fundamentals}
+	\subsection{Axioms of Probability}
+	
+	\noindent The three axioms of probability are:
+
+	\begin{equation*}
+		P(S)=1
+	\end{equation*}
+	\begin{equation*}
+		0\leq P(E)\leq 1
+	\end{equation*}
+	\begin{equation*}
+		E_{1}\cap E_{2} = \Phi \Leftrightarrow P(E_{1}\cup E_{2}) = P(E_{1}) + P(E_{2})
+	\end{equation*}
+	
+	\noindent The following equalities can be derived from these:
+
+	\begin{equation*}
+		P(\phi)=0
+	\end{equation*}
+	\begin{equation*}
+	P(\bar{E})=1-P(E)
+	\end{equation*}
+	\begin{equation*}
+		E_{1}\subseteq E_{2}\Leftrightarrow P(E_{1})\leq P(E_{2})
+	\end{equation*}
+	
+	\subsection{Addition Rule}
+	
+	The addition rule is used to calculate the probability of the union of two or more events.
+	
+	\noindent For mutually exclusive events:
+
+	\begin{equation*}
+		\text{If }E_{1}\cup E_{2} = \phi \text{, then }P(E_{1}\cup E_{2})=P(E_{1})+P(E_{2})
+	\end{equation*}
+	
+	\noindent General rule for two events:
+
+	\begin{equation*}
+		P(E_{1}\cup E_{2}) = P(E_{1}) + P(E_{2}) - P(E_{1}\cap E_{2})
+	\end{equation*}
+	
+	\noindent Expanded for three events:
+
+	\begin{align*}
+		P(A\cup B\cup C) &= P(A) + P(B\cup C) - P(A\cap (B\cup C)) \\
+		&= P(A) + P(B) + P(C) - P(B\cap C) - P((A\cap B)\cup (A\cap C)) \\
+		&= P(A) + P(B) + P(C)- P(B\cap C) - P(A\cap B) - P(A\cap C) + P(A\cap B\cap C)
+	\end{align*}
+	
+	\subsection{Conditional Probability}
+	
+	The conditional probability represents the probability of an event \(A\) given that an event \(B\) has happened.
+
+	\begin{equation*}
+		P(A|B)=\frac{P(A\cap B)}{P(B)}\text{, if }P(B)\neq 0
+	\end{equation*}
+	
+	\subsection{Multiplication Rule}
+	
+	From the definition of the conditional probability we can get the multiplication rule for calculating the probability of two or more intersecting events.
+
+	\begin{equation*}
+		P(A\cap B)=P(A|B)\times P(B)
+	\end{equation*}
+	
+	\noindent For the intersection of three events we can expand the formula as follows:
+
+	\begin{align*}
+		P(A\cap B\cap C) &= P(A|B\cap C)\times P(B\cap C) \\
+		&= P(A|B\cap C)\times P(B|C)\times P(C)
+	\end{align*}
+	
+	\subsection{Total Probability Rule}
+	
+	For an event \(A\) divided by the event \(B\) and its complement:
+
+	\begin{equation*}
+		P(A)=P(A|B)\times P(B)+P(A|\bar{B})\times P(\bar{B})
+	\end{equation*}
+	
+	\noindent For an event \(A\) divided by a group of events \(B_{1}, B_{2}\ldots B_{n}\),\newline where \(B_{1}\cap B_{2}\cap \ldots \cap B_{n}=\phi\):
+
+	\begin{equation*}
+		P(A)=\displaystyle \sum_{i=1}^{n}P(A|B_{i})\times P(B_{i})
+	\end{equation*}
+	
+		\subsection{Independence}
+		
+		Two events \(A\) and \(B\) are independent if and only if their joint probability equals the product of their probabilities.
+		
+		\begin{equation*}
+			A\perp B\Leftrightarrow P(A|B) = P(A)\times P(B)
+		\end{equation*}
+		
+		\noindent This also implies that \(P(A|B)=P(A)\) and \(P(B|A)=P(B)\).
+		
+	\subsection{Bayes' Theorem}
+	
+	Bayes' Theorem comes from the definition of conditional probability. It can be used to calculate \(P(A|B)\), when \(P(B|A)\) is known.
+
+	\begin{equation*}
+		P(A|B)=\frac{P(B|A)\times P(A)}{P(B)}
+	\end{equation*}
+	
+	\noindent We can use the rule of total probability to determine \(P(B)\). This is useful when there are two possible outcomes which affect \(B\).
+	
+	\begin{equation*}
+		P(A|B)=\frac{P(B|A)\times P(A)}{P(B|A)\times P(A) + P(B|\bar{A})\times P(\bar{A})}
+	\end{equation*}
+	
+	\noindent The extended form for multiple mutually exclusive events, spanning the sample space is:
+	
+	\begin{equation*}
+		P(A_{i}|B) = \frac{P(B|A_{i})\times P(A_{i})}{\sum_{j}^{} P(B|A_{j})\times P(A_{j})}
+	\end{equation*}
+	
+	\newpage
+	\section{Discrete Random Variables}
+	
+	\subsection{Probability Mass Function}
+	
+	The probability mass function of a random variable \(X\) is function, that given \(x\) yields the probability of \(P(X=x)\). More generally, a probability mass function for the discrete random variable \(X\) with the values \(x_{1}, x_{2},\ldots ,x_{n}\), fulfils the following properties:
+	
+	\begin{equation*}
+		f(x_{i})\geq 0
+	\end{equation*}
+	
+	\begin{equation*}
+		\sum_{i=1}^{n}f(x_{i})=1
+	\end{equation*}
+	
+	\begin{equation*}
+		f(x_{i})=P(X=x_{i})
+	\end{equation*}
+	
+	\subsection{Cumulative Distribution Function}
+	
+	The cumulative distribution function \(F(x)\) for a discrete random variable \(X\) is the the sum of probability mass functions for \(x_{i}\leq x\) and the probability for \(X\leq x\). It has the following properties:
+	
+	\begin{equation*}
+		F(x)=P(X\leq x)=\sum_{x_{i}\leq x}f(x_{i})
+	\end{equation*}
+	
+	\begin{equation*}
+		0\leq F(x)\leq 1
+	\end{equation*}
+	
+	\begin{equation*}
+		x\leq y \rightarrow F(x)\leq F(y)
+	\end{equation*}
+	
+	\newpage
+	\paragraph{Relations of Probability Mass Functions and Cumulative Distribution Functions}
+	
+	Solutions according to the definition: \(F(x)=P(X\leq x)\)
+	
+	\begin{align*}
+		P(a < X \leq b) &= P(X\leq b) - P(X\leq a) \\
+		&= F(b) - F(a)
+	\end{align*}
+	
+	\begin{align*}
+		P(a < X \le b) &= P(X < b) - P(X < a) \\
+		&= F^{-}(b) - F^{-}(a)
+	\end{align*}
+	
+	\begin{align*}
+		P(X > a) &= 1-P(X\leq a) \\
+		&= 1-F(a)
+	\end{align*}
+	
+	\subsection{Mean and Variance}
+	
+	\paragraph{The mean of a discrete random variable}
+	
+	\(X\), is the expected value of \(X\) and is represented by \(\mu\) or \(E(X)\). It is the sum of the possible values for \(X\) weighted their probability \(P(X=x)\).
+	
+	\begin{equation*}
+		\mu = E(X) = \sum_{x}x\times f(x)
+	\end{equation*}
+	
+	\paragraph{The variance}
+	
+	provides a measure of the dispersion of the possible values of \(X\). It is represented by \(\sigma ^2\) or \(V(X)\).
+	
+	\begin{align*}
+		\sigma ^2 = V(X) = E(X-\mu)^2 &= \sum_{x}(x-\mu)^2\times f(x) \\
+		&= \sum_{x}x^2\times f(x)-\mu ^2 \\
+		&= E(X^2) - (E(X))^2
+	\end{align*}
+	
+	\paragraph{The standard deviation}
+	
+	is the square root of the variance.
+	
+	\begin{equation*}
+		\sigma = \sqrt{\sigma ^2}
+	\end{equation*}
+	
+	\subsubsection{The Linear Operation \(E(X)\)}
+	
+	Given the random variable \(X\) and the real numbers \(a, b\).
+	
+	\begin{equation*}
+		E(a)=a
+	\end{equation*}
+	
+	\begin{equation*}
+		E(a\times X + b) = a\times E(X) + b
+	\end{equation*}
+	
+	\begin{equation*}
+		E(X-E(X)) = E(X) - E(EX) = 0
+	\end{equation*}
+	
+	\noindent Due to this property, \(X-E(X)\), is known as a centred random variable.
+	
+	\paragraph{Properties of the variance}
+	
+	derived from the properties of the mean and the definition \(V(X) = E(X-E(X))^2\).
+	
+	\begin{equation*}
+		V(a)=0
+	\end{equation*}
+	
+	\begin{equation*}
+		V(a\times X)=a^2\times V(X)
+	\end{equation*}
+	
+	\begin{equation*}
+		V(X-a)=V(X)
+	\end{equation*}
+	
+	\paragraph{These properties can be used to show, that}
+	
+	\begin{equation*}
+		V\left( \frac{X-E(X)}{\sqrt{V(X)}}\right) =1
+	\end{equation*}
+	
+	\noindent which gives us the standard random variable \(X^*\).
+	
+	\begin{equation*}
+		X^*= \frac{X-E(X)}{\sqrt{V(X)}}
+	\end{equation*}
+	
+	\begin{equation*}
+		E(X^*)= 0
+	\end{equation*}
+	
+	\begin{equation*}
+		V(X^*)= 1
+	\end{equation*}
+	
+	\newpage
+	\subsection{Distributions}
+	
+		\subsubsection{Discrete Uniform Distribution}
+		
+		The simplest form of distribution, where all values for \(X\) in range \(x_1, x_2,\ldots ,x_n\) have an equal probability. The probability mass function for this kind of distribution is:
+		
+		\begin{equation*}
+		f(x_i)=\frac{1}{n}
+		\end{equation*}
+	
+	\subsubsection{Binomial Distribution}
+	
+	A chain of events, known as a \emph{Bernoulli Trial}, where the probability doesn't change and where the outcome is always either the event or its complement has a binomial distribution, when \(X\) represents the number successful (or unsuccessful outcomes). In this case the probability mass function is made up of a combination of elements multiplied by \(p\) taken to the power of the number of successful outcomes and the complement of \(p\) to the power of unsuccessful events.
+	\newline
+	
+	\noindent For \(x=0, 1, 2,\ldots ,n\)
+	\begin{equation*}
+	f(x_{i})=C^{n}_{x_{i}}\times p^{x_{i}}\times (1-p)^{n-x_{i}}
+	\end{equation*}
+	
+	\noindent It can also be expressed more simply as:
+	
+	\begin{equation*}
+	X\sim B(n, p)
+	\end{equation*}
+	
+	\paragraph{Mean and Variance of a binomial distribution}
+
+	\begin{equation*}
+		\mu = E(X) = n\times p
+	\end{equation*}
+	
+	\begin{equation*}
+		\sigma^2 = V(X) = n\times p\times (1-p)
+	\end{equation*}
+	
+	\newpage
+	\subsubsection{Geometric Distribution}
+	
+	A series of \emph{Bernoulli Trials} where only the \(k^{th}\) trial has a positive outcome and all previous trials do not. So \(X\) represents the first time an event occurs.
+	\newline
+	
+	\noindent For \(x=1,2,\ldots ,n\)
+	
+	\begin{equation*}
+		f(x_i) = (1-p)^{x_i-1}\times p
+	\end{equation*}
+	
+	\begin{equation*}
+		X\sim G(p)
+	\end{equation*}
+	
+	\paragraph{Expected value of a geometric distribution}
+	
+	\begin{equation*}
+		\mu = E(X) = \frac{1}{p}
+	\end{equation*}
+	
+	\paragraph{No memory property}
+	
+	Whenever a success happens it doesn't affect future successes, the counter "resets" to zero and there is no memory of the first success.
+	
+	\begin{equation*}
+		P(X\geq k_1+k_2 | X\geq k_1) = P(X\geq k_2)
+	\end{equation*}
+	
+	\subsubsection{Hypergeometric Distribution}
+	
+	Given \(N\) elements, in which there are contained \(K\) elements, which are considered successes. If we take \(n\) elements, what is the probability, that we take \(x\) elements from \(K\).
+	This is represented by a hypergeometric distribution.
+	
+	\begin{equation*}
+		f(x_i)=\frac{\binom{K}{x}\times \binom{N-K}{n-x}}{\binom{N}{n}}
+	\end{equation*}
+	
+	\begin{equation*}
+		X\sim H(N, K, n)
+	\end{equation*}
+	
+	\paragraph{Expected value and approximation as binomial distribution}
+	
+	\begin{equation*}
+		E(X)=\frac{n\times K}{N}
+	\end{equation*}
+	
+	\noindent As \(N\) and \(K\) approach infinity the ratio of the two changes less and less when we take elements away, which lets us use a binomial distribution as an approximation when dealing with large sets of elements.
+	
+	\subsubsection{Poisson Distribution}
+	
+	An interval is divided into small intervals, so that each interval can contain only a single success and the probability of a success is equal for all intervals.
+	
+	\begin{equation*}
+		f(x)=\frac{e^{-\lambda}\times \lambda ^x}{x!}
+	\end{equation*}
+	
+	\begin{equation*}
+		X\sim P(\lambda)
+	\end{equation*}
+	
+	\noindent The mean \(E(X)\) and variance \(V(X)\) are both equal to the frequency \(\lambda\).
+	
+	\subsection{Approximations}
+	
+	Given distributions with certain properties, the following approximations can be applied.
+	
+	If \(N\) and \(K\) are large
+	\begin{equation*}
+		X\sim H(N,K,n)\rightarrow X\sim B\left(n, \frac{K}{N}\right)
+	\end{equation*}
+	
+	If \(n\) is large and \(p\) is small
+	\begin{equation*}
+		X\sim B(n,p)\rightarrow X\sim P(np)
+	\end{equation*}
+	
+	\newpage
+	\section{Continuous Random Variables}
+	
+	\subsection{Probability Density Function}
+	
+	\begin{equation*}
+	f(x_{i})\geq 0
+	\end{equation*}
+	
+	\begin{equation*}
+	\int_{-\infty}^{\infty}f(x)\mathrm{d} x=1
+	\end{equation*}
+	
+	\begin{equation*}
+	P(a\leq X\leq b)=\int_{a}^{b}f(x)\mathrm{d} x
+	\end{equation*}
+	
+	\noindent Due to the properties of integration, the following is true.
+	
+	\begin{equation*}
+		P(x_1\leq X\leq x_2)=P(x_1 < X\leq x_2)=P(x_1\leq X < x_2)=P(x_1 < X < x_2)
+	\end{equation*}
+	
+	\subsection{Cumulative Distribution Function}
+	
+	\begin{equation*}
+		F(x) = P(X\leq x) = \int_{-\infty}^{x}f(t)\mathrm{d} t
+	\end{equation*}
+	
+	\subsection{Mean and Variance}
+	
+	\begin{equation*}
+	\mu = E(X) = \int_{-\infty}^{\infty}xf(x)\mathrm{d} x
+	\end{equation*}
+	
+	\begin{equation*}
+	\sigma ^2 = V(X) = \int_{-\infty}^{\infty}(x-\mu)^2f(x)\mathrm{d} x = \int_{-\infty}^{\infty}x^2f(x)\mathrm{d} x-\mu ^2
+	\end{equation*}
+	
+	\newpage
+	\subsection{Distributions}
+	
+	\subsubsection{Continuous Uniform Distribution}
+	
+	Pretty much the same as for discrete variables only that we have a continuous distribution.
+	\begin{equation*}
+		X\sim U(a,b)
+	\end{equation*}
+	
+	\begin{equation*}
+		a\leq x\leq b
+	\end{equation*}
+	
+	\begin{equation*}
+		f(x)=\frac{1}{(b-a)}
+	\end{equation*}
+	
+	\begin{equation*}
+		E(X)=\frac{(a+b)}{2}
+	\end{equation*}
+	
+	\begin{equation*}
+		V(X)=\frac{(b-a)^2}{12}
+	\end{equation*}
+	
+	\subsubsection{Normal Distribution}
+	
+	\begin{equation*}
+		X\sim N(\mu,\sigma ^2)
+	\end{equation*}
+	
+	\begin{equation*}
+		-\infty \leq x\leq \infty
+	\end{equation*}
+	
+	\begin{equation*}
+		f(x)=\frac{1}{\sqrt{2\pi}\times \sigma}e^{\frac{-(x-\mu)^2}{2\sigma ^2}}
+	\end{equation*}
+	
+	\begin{equation*}
+		E(X)=\mu
+	\end{equation*}
+	
+	\begin{equation*}
+		V(X)=\sigma ^2
+	\end{equation*}
+	
+	\paragraph{Standard Normal Random Variable}
+	
+	\noindent The standard normal random variable \(Z\) has a distribution with a mean of \(0\) and a variance of \(1\). This lets us use a reference table to find the probability.
+	
+	\begin{equation*}
+		Z\sim N(0,1)
+	\end{equation*}
+	
+	\begin{equation*}
+		\Phi (z) = P(Z\leq z)
+	\end{equation*}
+	
+	\begin{equation*}
+		f(z)=\frac{1}{\sqrt{2\pi}}e^{-\frac{z^2}{2}}
+	\end{equation*}
+	
+	\paragraph{Standardising}
+	
+	can be used to determine the probabilities of non-standard random variables that have a normal distribution.
+	
+	\noindent Given the random variable \(X\sim N(\mu , \sigma ^2)\). We create the random variable \(Y=\frac{X-\mu}{\sigma}\), which is a standard normal random variable. \(Y\sim N(0,1)\)
+	
+	\subsubsection{Approximations for Binomial and Poisson Distributions to Normal Distributions}
+	
+	Given \(X\sim B(n,p)\), \(Z=\frac{X-np}{\sqrt{np(1-p)}}\) is approximately a standard normal variable. This is good for \(np>5\) and \(n(1-p)>5\). Then we can approximate \(X\) as \(X\sim N(np, np(1-p))\).
+	\newline
+	\noindent Given \(X\sim P(\lambda)\), \(Z=\frac{X-\lambda}{\sqrt{\lambda}}\) is approximately a standard normal variable. This is good for \(\lambda>5\). Then we can approximate \(X\) as \(X\sim N(\lambda, \lambda)\).
+	
+	\newpage
+	\subsubsection{Exponential Distribution}
+	
+	An exponential distribution describes the probability of the duration of time until an event, where \(\lambda\) is the frequency of the event in some time frame.
+	
+		\begin{equation*}
+		X\sim Exp(\lambda)
+		\end{equation*}
+		
+		\begin{equation*}
+		0\leq x\leq \infty
+		\end{equation*}
+		
+		\begin{equation*}
+		f(x)=\lambda e^{-\lambda x}
+		\end{equation*}
+		
+		\begin{equation*}
+		E(X)=\frac{1}{\lambda}
+		\end{equation*}
+		
+		\begin{equation*}
+		V(X)=\frac{1}{\lambda ^2}
+		\end{equation*}
+	
+	\paragraph{Lack of memory property}
+	
+	\begin{equation*}
+		P(X>t_1+t_2|X>t_1)=P(X>t_2)
+	\end{equation*}
+	
+	\subsubsection{Erlang Distribution}
+	
+	An Erlang distribution is series of Poisson events, with an Exponential distribution. Simply it the probability of \(r\) counts of an exponential distribution.	
+
+		\begin{equation*}
+		x>0 ~and~ r=1,2,\ldots
+		\end{equation*}
+		
+		\begin{equation*}
+		f(x)=\frac{\lambda ^r x^{r-1} e^{-\lambda x}}{(r-1)!}
+		\end{equation*}
+		
+		\begin{equation*}
+		E(X)=\frac{r}{\lambda}
+		\end{equation*}
+		
+		\begin{equation*}
+		V(X)=\frac{r}{\lambda ^2}
+		\end{equation*}
+	
+	\newpage	
+	\section{Joint Probability}
+	
+	Covers the probability of joint events. It is composed of the marginal probabilities. Given the events \(X_1,X_2\), the marginal probabilities are \(f_1(x_1)=\int_{-\infty}^{\infty}f(x_1, x_2)\mathrm{d} x_1\) and \(f_2(x_2)=\int_{-\infty}^{\infty}f(x_1, x_2)\mathrm{d} x_2\). If \(X_1\perp X_2\) \(f(x_1,x_2)=f_1f_2\) else \(f(x_1,x_2)=\iint\limits_\sigma f_1f_2\sigma \).
+	
+	\paragraph{Covariance}
+	
+	\begin{equation*}
+		cov(X_1, X_2)=E((X_1-E(X_2))\times(X_2-E(X_1)))
+	\end{equation*}
+	
+	\paragraph{Correlation}
+	
+	\begin{equation*}
+		\rho =\frac{cov(X,Y)}{\sqrt{V(X)V(Y)}}
+	\end{equation*}
+	
+	\newpage
+	\section{Statistics}
+	
+	\subsection{Random Sampling and Data Description}
+	
+	\paragraph{Sample Mean}
+	
+	\begin{equation*}
+		\bar{X} = \frac{\sum x_i}{n}
+	\end{equation*}
+	
+	\paragraph{Sample Variance}
+	
+	\begin{equation*}
+		S^2=\frac{\sum (x_i-\bar{x})^2}{n-1}
+	\end{equation*}
+	
+	\paragraph{Sample range}
+	
+	\begin{equation*}
+		r=max(x_i)-min(x_i)
+	\end{equation*}
+	
+	\paragraph{Population}
+	
+	Totality of observation with which we are concerned. \(X\) is the population. Analogous to a random variable in probability.
+	
+	\paragraph{Sample}
+	
+	Subset of observations selected from the population. \(X_1, X_2,\ldots,X_n\) are a random sample of size n if all \(X_i\) are independent and they have the same probability distribution. That means they are independent identically distributed (i.i.d.).
+	
+	\paragraph{Statistic}
+	
+	Any function of observations in a random sample. For example \(\bar{X}\), \(S^2\), \(min(X)\) and \(max(X)\).
+	
+	\subsection{Point Estimation of Parameters}
+	
+	A point estimator \(\hat{\Theta}\) is a statistic of a random sample used to estimate the parameter \(\theta\). \(\hat{\theta}\) is then called the point estimate and is a value.
+	
+	\paragraph{Unbiased Estimator}
+	
+	An estimator is unbiased if \(E(\hat{\Theta})=\theta\). If this does not hold true, then it is a biased estimator and \(E(\hat{\Theta})-\theta \) is the bias of \(\hat{\Theta}\).
+	
+	\paragraph{Minimum Variance Unbiased Estimator}
+	
+	The MVUE is the unbiased estimator with the smallest variance. This is the best kind of unbiased estimator. One example is the sample mean \(\bar{X}\). It is the MVUE for \(\mu\).
+	
+	\paragraph{Standard Error}
+	
+	Similar to the standard deviation. It is a measure of how accurate an estimator \(\hat{\Theta}\) is.
+	
+	\begin{equation*}
+		\sigma_{\hat{\Theta}}=\sqrt{V(\hat{\Theta})}
+	\end{equation*}
+	
+	\paragraph{Mean Square Error}
+	
+	To measure the suitability of a biased estimator we can use the MSE. We can also use it to compare biased and unbiased estimators.
+	
+	\begin{align*}
+		MSE(\hat{\Theta}) &= E(\hat{\Theta} - \theta)^2 \\
+		&= E\left[\hat{\Theta} - E(\hat{\Theta}) \right] ^2 + E\left[\theta - E(\hat{\Theta}) \right] ^2 \\
+		&= V(\hat{\Theta}) + (\mathrm{bias})^2
+	\end{align*}
+	
+	\subsubsection{Method of Moments}
+	
+	\(k\) is the order of the moment. For the calculations we want \(k\) to be as small as possible.
+	
+	\paragraph{Population Moment}
+	
+	\begin{equation*}
+		E(X^k)
+	\end{equation*}
+	
+	\paragraph{Sample Moment}
+	
+	\begin{equation*}
+		\frac{1}{n}\sum_{i=1}^{n}X_{i}^{k}
+	\end{equation*}
+	
+	\noindent To find the point estimator, we make the population moment equal the sample moment and solve for the parameter whose estimator we are trying to determine.
+	
+	\newpage
+	\subsubsection{Method of Maximum Likelihood}
+	
+	The likelihood function gives the probability of a parameter given the sample. So when the probability is high the parameter is more likely.
+	
+	\paragraph{Likelihood Function}
+	
+	\begin{equation*}
+		L(\theta) = \prod_{i=1}^{n}f(x_i;\theta)
+	\end{equation*}
+	
+	\paragraph{Solving the Likelihood Function}
+	
+	\(X\sim Exp(\lambda)\) so the probability mass function is \(f(x|\lambda)=\lambda e^{-\lambda x}\)
+	
+	\begin{align*}
+		L(\lambda |x_1\ldots x_n) &= \prod\lambda e^{-\lambda x_i} \\
+		&= \lambda ^n e^{-\lambda\left(\sum x_i\right)} \\
+		\ln\left(L(\lambda)\right) &= n\ln \lambda - \lambda\left(\sum x_i\right) \\
+		\frac{\mathrm{d}\ln L(\lambda)}{\mathrm{d}\lambda} &= n\frac{n}{\lambda} - \sum x_i = 0 \\
+		\hat{\lambda}_{MLE} &= \frac{1}{\bar{x}}
+	\end{align*}
+	
+	\noindent To solve the likelihood function for the optimum estimator means finding the maximum of it. So typically the procedure involves taking the natural logarithm to eliminate exponents and then finding the derivative and solving for 0. If there are are more than one parameter, it is necessary to do partial derivation to find the maxima for all parameters.
+	
+\end{document}

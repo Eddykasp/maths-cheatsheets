@@ -1,0 +1,53 @@
+% !TeX spellcheck = en_GB
+\documentclass[a4paper, 10pt]{article}
+
+\usepackage{fontspec}
+\usepackage{amsmath}
+\usepackage{multicol}
+
+\defaultfontfeatures{Mapping=tex-text,Scale=MatchLowercase}
+\setmainfont{Ubuntu Light}
+
+\title{Calculus}
+\author{Max Kasperowski}
+
+\begin{document}
+\maketitle
+\tableofcontents
+
+\newpage
+\section{Derivatives}
+\subsection{Definition}
+
+If the derivative is defined to be \( y = f(x) \), then its derivative is \( f'(x) = \lim_{h\to\infty}\frac{f(x+h)-f(x)}{h} \).
+\newline
+
+Equivalent notations for the derivative of \( y = f(x) \) are:
+\[ f'(x) = y' = \frac{df}{dx} = \frac{dy}{dx} = \frac{d}{dx}(f(x)) = Df(x) \]
+\newline
+
+Equivalent notations for the the derivative of \( y = f(x) \) evaluated at \( x = a \) are:
+\[ f'(a) = y'\Bigr|_{x=a} = \frac{df}{dx}\Bigr|_{x=a} = \frac{dy}{dx}\Bigr|_{x=a} = Df(a) \]
+
+\subsection{Properties}
+The following properties hold where \( f(x) \) and \( g(x) \) are differential functions and \( c \) and \( n \) are any real numbers.
+
+\begin{multicols}{2}
+    \begin{enumerate}
+        \item \( (cf)' = cf'(x) \)
+        \item \( (f \pm g)' = f'(x) \pm g'(x) \)
+        \item \( (fg)' = f'g + fg' \)
+        \item \( \left(\frac{f}{g}\right)' = \frac{f'g - fg'}{g^2} \)
+        \item \( \frac{d}{dx}(c) = 0 \)
+        \item \( \frac{d}{dx}\left(x^n\right) = nx^{n-1} \)
+        \item \( \frac{d}{dx}\left(f\left(g(x)\right)\right) = f'\left(g(x)\right)g'(x) \)
+    \end{enumerate}
+\end{multicols}
+\subsection{Common Derivatives}
+\begin{multicols}{3}
+    \begin{itemize}
+        \item[] \( \frac{d}{dx}(x) = 1 \)
+    \end{itemize}
+\end{multicols}
+
+\end{document}
