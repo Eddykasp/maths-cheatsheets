@@ -1,0 +1,91 @@
+% !TeX spellcheck = en_GB
+\documentclass[a4paper, 10pt]{article}
+
+\usepackage{fontspec}
+\usepackage{amsmath}
+\usepackage{multicol}
+\usepackage{color}
+\defaultfontfeatures{Mapping=tex-text,Scale=MatchLowercase}
+\setmainfont{Ubuntu Light}
+
+\title{Discrete Mathematics}
+\author{Max Kasperowski}
+
+\begin{document}
+\maketitle
+\tableofcontents
+
+\newpage
+\section{Propositional Logic}
+In propositional logic, propositions are denoted by letters (\(p, q\)) and are formed by connecting other propositions using logical connectives. Propositions can either be true (\(T\)) or false (\(F\)).
+\subsection{Logical Connectives}
+The logical connectives listed below are the basic connectives available in propositional logic in order of their precedence. Below are the truthtables corresponding to each of the connectives.
+\begin{enumerate}
+    \item \( \neg \), not
+    \item \( \land \), and
+    \item \( \lor \), or
+    \item \( \rightarrow ,\Rightarrow \), implies (only if)
+    \item \( \leftrightarrow ,\Leftrightarrow \), is equivalent to (if and only if, iff)
+\end{enumerate}
+
+\begin{multicols}{2}
+\paragraph{Negation}
+\begin{tabular}{@{ }c | c@{ }@{ }c}
+p & \( \neg \) & p\\
+\hline
+T & \textcolor{red}{F} & T\\
+F & \textcolor{red}{T} & F\\
+\end{tabular}
+\paragraph{Logical And}
+\begin{tabular}{@{ }c@{ }@{ }c | c@{ }@{ }c@{ }@{ }c@{ }@{ }c@{ }@{ }c}
+p & q &  & p & \( \land\) & q & \\
+\hline
+T & T &  & T & \textcolor{red}{T} & T & \\
+T & F &  & T & \textcolor{red}{F} & F & \\
+F & T &  & F & \textcolor{red}{F} & T & \\
+F & F &  & F & \textcolor{red}{F} & F & \\
+\end{tabular}
+\paragraph{Logical Or}
+\begin{tabular}{@{ }c@{ }@{ }c | c@{ }@{ }c@{ }@{ }c@{ }@{ }c@{ }@{ }c}
+p & q &  & p & \( \lor \) & q & \\
+\hline
+T & T &  & T & \textcolor{red}{T} & T & \\
+T & F &  & T & \textcolor{red}{T} & F & \\
+F & T &  & F & \textcolor{red}{T} & T & \\
+F & F &  & F & \textcolor{red}{F} & F & \\
+\end{tabular}
+\paragraph{Implication}
+\begin{tabular}{@{ }c@{ }@{ }c | c@{ }@{ }c@{ }@{ }c@{ }@{ }c@{ }@{ }c}
+p & q &  & p & \(\rightarrow\) & q & \\
+\hline
+T & T &  & T & \textcolor{red}{T} & T & \\
+T & F &  & T & \textcolor{red}{F} & F & \\
+F & T &  & F & \textcolor{red}{T} & T & \\
+F & F &  & F & \textcolor{red}{T} & F & \\
+\end{tabular}
+\paragraph{Equivalence}
+\begin{tabular}{@{ }c@{ }@{ }c | c@{ }@{ }c@{ }@{ }c@{ }@{ }c@{ }@{ }c}
+p & q &  & p & \(\leftrightarrow\) & q & \\
+\hline
+T & T &  & T & \textcolor{red}{T} & T & \\
+T & F &  & T & \textcolor{red}{F} & F & \\
+F & T &  & F & \textcolor{red}{F} & T & \\
+F & F &  & F & \textcolor{red}{T} & F & \\
+\end{tabular}
+\end{multicols}
+\subsection{Definitions}
+When given the proposition \( p\rightarrow q \), \( q\rightarrow p \) is its converse, \( \neg q\rightarrow \neg p \) is its contrapositive and \( \neg p\rightarrow \neg q \) is its inverse. The contrapositive is equivalent to the original proposition and the converse and inverse are also equivalent.
+
+\paragraph{Tautology}
+A proposition that is always true (\(p\lor\neg p\)).
+
+\paragraph{Contradiction}
+A proposition that is always false (\(p\land\neg p\)).
+
+\paragraph{Contingency}
+A proposition that is neither a tautology nor a contradiction.
+
+\paragraph{Logical Equivalence}
+\(p\) and \(q\) are logically equivalent if \(p\leftrightarrow q\) is a tautology. The notation for equivalence is typically \(\equiv\).
+
+\end{document}
