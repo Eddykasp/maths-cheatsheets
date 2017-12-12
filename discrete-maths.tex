@@ -24,8 +24,8 @@ The logical connectives listed below are the basic connectives available in prop
     \item \( \neg \), not
     \item \( \land \), and
     \item \( \lor \), or
-    \item \( \Rightarrow \), implies (only if)
-    \item \( \Leftrightarrow \), is equivalent to (if and only if, iff)
+    \item \( \rightarrow ,\Rightarrow \), implies (only if)
+    \item \( \leftrightarrow ,\Leftrightarrow \), is equivalent to (if and only if, iff)
 \end{enumerate}
 
 \begin{multicols}{2}
@@ -56,7 +56,7 @@ F & F &  & F & \textcolor{red}{F} & F & \\
 \end{tabular}
 \paragraph{Implication}
 \begin{tabular}{@{ }c@{ }@{ }c | c@{ }@{ }c@{ }@{ }c@{ }@{ }c@{ }@{ }c}
-p & q &  & p & \(\Rightarrow\) & q & \\
+p & q &  & p & \(\rightarrow\) & q & \\
 \hline
 T & T &  & T & \textcolor{red}{T} & T & \\
 T & F &  & T & \textcolor{red}{F} & F & \\
@@ -65,7 +65,7 @@ F & F &  & F & \textcolor{red}{T} & F & \\
 \end{tabular}
 \paragraph{Equivalence}
 \begin{tabular}{@{ }c@{ }@{ }c | c@{ }@{ }c@{ }@{ }c@{ }@{ }c@{ }@{ }c}
-p & q &  & p & \(\Leftrightarrow\) & q & \\
+p & q &  & p & \(\leftrightarrow\) & q & \\
 \hline
 T & T &  & T & \textcolor{red}{T} & T & \\
 T & F &  & T & \textcolor{red}{F} & F & \\
