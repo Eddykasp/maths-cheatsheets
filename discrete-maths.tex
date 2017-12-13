@@ -89,9 +89,40 @@ A proposition that is neither a tautology nor a contradiction.
 \(p\) and \(q\) are logically equivalent if \(p\leftrightarrow q\) is a tautology. The notation for equivalence is typically \(\equiv\).
 
 \subsection{Properties}
-\paragraph{De Morgan's Laws}
-\[ \neg(p\land q) \equiv \neg p \lor \neg q \]
-\[ \neg(p\lor q) \equiv \neg p \land \neg q \]
+\begin{multicols}{2}
+    \paragraph{De Morgan's Laws}
+    \[ \neg(p\land q) \equiv \neg p \lor \neg q \]
+    \[ \neg(p\lor q) \equiv \neg p \land \neg q \]
 
+    \paragraph{Identity Laws}
+    \[ p \land T \equiv p \]
+    \[ p \lor F \equiv p \]
+
+    \paragraph{Domination Laws}
+    \[ p \land F \equiv F \]
+    \[ p \lor T \equiv T \]
+
+    \paragraph{Idempotent Laws}
+    \[p \land p \equiv p\]
+    \[ p \lor p \equiv p\]
+
+    \paragraph{Negation Laws}
+    \[ p \land \neg p \equiv F \]
+    \[ p \lor \neg p \equiv T \]
+
+    \paragraph{Commutative Laws}
+    \[ p \land q \equiv q \land p\]
+    \[ p \lor q \equiv q \lor p \]
+
+    \paragraph{Associative Laws}
+    \[ (p \land q)\land r \equiv p\land(q\land r) \]
+    \[ (p \lor q)\lor r \equiv p\lor(q\lor r) \]
+
+
+
+
+
+
+\end{multicols}
 
 \end{document}
