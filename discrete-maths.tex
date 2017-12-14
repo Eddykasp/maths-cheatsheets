@@ -172,6 +172,7 @@ De Morgan's laws for quantifiers state that \(P(x)\) is not true for all \(x\) i
 Using logical inference it is possible to build an argument given a set of premises to reach a logical conclusion. An argument is valid if truth of all premises (\(p_i)\)) implies that the conclusion \(q\) is also true.
 \[\left(\bigwedge_{i=1}^n p_i\right)\rightarrow q \equiv T\]
 
+\newpage
 \subsubsection{Rules of Inference}
 \begin{multicols}{3}
 \paragraph{Modus Ponens}\mbox{}\\
@@ -232,6 +233,36 @@ Using logical inference it is possible to build an argument given a set of premi
 \(\therefore\)  & \(q\lor r\)
 \end{tabular}
 
+\paragraph{Universal Instantiation}\mbox{}\\
+\begin{tabular}{c@{\,}l@{}}
+                & \(\forall xP(x)\) \\\cline{2-2}
+\(\therefore\)  & \(P(c)\)
+\end{tabular}
+
+\paragraph{Universal Generalisation}\mbox{}\\
+\begin{tabular}{c@{\,}l@{}}
+                & \(P(c)\) for an arbitrary \(c\) \\\cline{2-2}
+\(\therefore\)  & \(\forall xP(x)\)
+\end{tabular}
+
+\paragraph{Existential Instantiation}\mbox{}\\
+\begin{tabular}{c@{\,}l@{}}
+                & \(\exists xP(x)\) \\\cline{2-2}
+\(\therefore\)  & \(P(c)\) for some element \(c\)
+\end{tabular}
+
+\paragraph{Existential Generalisation}\mbox{}\\
+\begin{tabular}{c@{\,}l@{}}
+                & \(P(c)\) for some element \(c\) \\\cline{2-2}
+\(\therefore\)  & \(\exists xP(x)\)
+\end{tabular}
+
+\paragraph{Universal Modus Ponens}
+\begin{tabular}{c@{\,}l@{}}
+                & \(\forall x(P(x)\rightarrow Q(x))\) \\
+                & \(P(a)\) for a particular element \(a\) \\\cline{2-2}
+\(\therefore\)  & \(Q(a)\)
+\end{tabular}
 
 \end{multicols}
 
