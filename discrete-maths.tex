@@ -6,7 +6,9 @@
 \usepackage{multicol}
 \usepackage{color}
 \usepackage{colortbl}
+\usepackage[dvipsnames]{xcolor}
 \usepackage{logicproof}
+\usepackage{tikz}
 \defaultfontfeatures{Mapping=tex-text,Scale=MatchLowercase}
 \setmainfont{Ubuntu Light}
 
@@ -307,5 +309,18 @@ A singleton is a set containing exactly one element.
 
 \subsubsection{Set Equality}
 Two sets are equal if they contain the same elements. If \(A\) and \(B\) are sets then their equality is expressed by \( \forall x(x\in A \leftrightarrow x\in B)\rightarrow A=B \).
+
+\subsubsection{Venn Diagram}
+The below diagram shows the set \(V\) contained in the universal set \(U\).
+
+\begin{tikzpicture}
+\draw [fill=Aquamarine](0,0) --(0,2) --(3,2) --(3,0) --(0,0);
+\node [left] at (3,1){\(U\)};
+\draw [fill=yellow] (1.25,1) circle [radius=0.6];
+\node at (1.25,1){\(V\)};
+\end{tikzpicture}
+
+\subsection{Subsets}
+
 
 \end{document}
