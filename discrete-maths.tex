@@ -266,4 +266,16 @@ Using logical inference it is possible to build an argument given a set of premi
 
 \end{multicols}
 
+\subsubsection{Inference Proof}
+All men are mortal. Socrates is a man. Prove that Socrates is mortal.
+
+\(P(x)\equiv T\) means that \(x\) is a person. \(M(x)\equiv T\) means that \(x\) is mortal. \(s\) is the particular element Socrates.
+
+\begin{logicproof}{0}
+    \forall x P(x)\rightarrow M(x) & premise \\
+    P(s) & premise \\
+    P(s)\rightarrow M(s) & UI (1) \\
+    M(s) & Modus Ponens, (2) \& (3)
+\end{logicproof}
+
 \end{document}
