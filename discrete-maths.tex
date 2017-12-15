@@ -39,44 +39,44 @@ The logical connectives listed below are the basic connectives available in prop
 \begin{tabular}{@{ }c | c@{ }@{ }c}
 p & \( \neg \) & p\\
 \hline
-T & \textcolor{red}{F} & T\\
-F & \textcolor{red}{T} & F\\
+T & \textcolor{ForestGreen}{F} & T\\
+F & \textcolor{ForestGreen}{T} & F\\
 \end{tabular}
 \paragraph{Logical And}\mbox{}\\
 \begin{tabular}{@{ }c@{ }@{ }c | c@{ }@{ }c@{ }@{ }c@{ }@{ }c@{ }@{ }c}
 p & q &  & p & \( \land\) & q & \\
 \hline
-T & T &  & T & \textcolor{red}{T} & T & \\
-T & F &  & T & \textcolor{red}{F} & F & \\
-F & T &  & F & \textcolor{red}{F} & T & \\
-F & F &  & F & \textcolor{red}{F} & F & \\
+T & T &  & T & \textcolor{ForestGreen}{T} & T & \\
+T & F &  & T & \textcolor{ForestGreen}{F} & F & \\
+F & T &  & F & \textcolor{ForestGreen}{F} & T & \\
+F & F &  & F & \textcolor{ForestGreen}{F} & F & \\
 \end{tabular}
 \paragraph{Logical Or}\mbox{}\\
 \begin{tabular}{@{ }c@{ }@{ }c | c@{ }@{ }c@{ }@{ }c@{ }@{ }c@{ }@{ }c}
 p & q &  & p & \( \lor \) & q & \\
 \hline
-T & T &  & T & \textcolor{red}{T} & T & \\
-T & F &  & T & \textcolor{red}{T} & F & \\
-F & T &  & F & \textcolor{red}{T} & T & \\
-F & F &  & F & \textcolor{red}{F} & F & \\
+T & T &  & T & \textcolor{ForestGreen}{T} & T & \\
+T & F &  & T & \textcolor{ForestGreen}{T} & F & \\
+F & T &  & F & \textcolor{ForestGreen}{T} & T & \\
+F & F &  & F & \textcolor{ForestGreen}{F} & F & \\
 \end{tabular}
 \paragraph{Implication}\mbox{}\\
 \begin{tabular}{@{ }c@{ }@{ }c | c@{ }@{ }c@{ }@{ }c@{ }@{ }c@{ }@{ }c}
 p & q &  & p & \(\rightarrow\) & q & \\
 \hline
-T & T &  & T & \textcolor{red}{T} & T & \\
-T & F &  & T & \textcolor{red}{F} & F & \\
-F & T &  & F & \textcolor{red}{T} & T & \\
-F & F &  & F & \textcolor{red}{T} & F & \\
+T & T &  & T & \textcolor{ForestGreen}{T} & T & \\
+T & F &  & T & \textcolor{ForestGreen}{F} & F & \\
+F & T &  & F & \textcolor{ForestGreen}{T} & T & \\
+F & F &  & F & \textcolor{ForestGreen}{T} & F & \\
 \end{tabular}
 \paragraph{Equivalence}\mbox{}\\
 \begin{tabular}{@{ }c@{ }@{ }c | c@{ }@{ }c@{ }@{ }c@{ }@{ }c@{ }@{ }c}
 p & q &  & p & \(\leftrightarrow\) & q & \\
 \hline
-T & T &  & T & \textcolor{red}{T} & T & \\
-T & F &  & T & \textcolor{red}{F} & F & \\
-F & T &  & F & \textcolor{red}{F} & T & \\
-F & F &  & F & \textcolor{red}{T} & F & \\
+T & T &  & T & \textcolor{ForestGreen}{T} & T & \\
+T & F &  & T & \textcolor{ForestGreen}{F} & F & \\
+F & T &  & F & \textcolor{ForestGreen}{F} & T & \\
+F & F &  & F & \textcolor{ForestGreen}{T} & F & \\
 \end{tabular}
 \end{multicols}
 \subsubsection{Definitions}
@@ -137,11 +137,11 @@ A proposition that is neither a tautology nor a contradiction.
 \subsubsection{Equivalence Proof}
 This is an example of how to perform an equivalence proof. The aim is to show that \( \neg(p\lor (\neg p \land q)) \) is logically equivalent to \( \neg p\land \neg q \). We can prove this by forming a series of logical equivalences.
 \begin{align*}
-    \textcolor{red}{\neg (p\lor(\neg p\land q))} &\equiv \neg p \land \neg(\neg p\land q) & \text{2\textsuperscript{nd} De Morgan's law}\\
+    \textcolor{ForestGreen}{\neg (p\lor(\neg p\land q))} &\equiv \neg p \land \neg(\neg p\land q) & \text{2\textsuperscript{nd} De Morgan's law}\\
     \neg p \land \neg(\neg p\land q) &\equiv \neg p \land (p\lor\neg q) & \text{1\textsuperscript{st} De Morgan's law} \\
     \neg p \land (p\lor\neg q) &\equiv (\neg p \land p)\lor(\neg p\land \neg q) & \text{Associative law} \\
     (\neg p \land p)\lor(\neg p\land \neg q) &\equiv F \lor (\neg p \land \neg q) & \text{Negation law} \\
-    F \lor (\neg p \land \neg q) &\equiv \textcolor{red}{\neg p \land \neg q} & \text{Identity law}
+    F \lor (\neg p \land \neg q) &\equiv \textcolor{ForestGreen}{\neg p \land \neg q} & \text{Identity law}
 \end{align*}
 
 \newpage
@@ -155,14 +155,14 @@ A predicate is a generalisation of propositions when the variable \(x\) is repla
 \paragraph{Quantifiers}
 Quantifiers are used to express that a proposition is true for all elements of the domain and that there exists some element in the domain for which it is true. They also have the highest precedence among the logical operators.
 \begin{align*}
-    \text{Universal quantifier\quad\quad\quad\quad} & \textcolor{red}{\forall} xP(x) & P(x)\text{ is true for every \(x\) in \(U\)} \\
-    \text{Existential quantifier\quad\quad\quad\quad} & \textcolor{red}{\exists} xP(x) & P(x)\text{ is true for some \(x\) in \(U\)}
+    \text{Universal quantifier\quad\quad\quad\quad} & \forall xP(x) & P(x)\text{ is true for every \(x\) in \(U\)} \\
+    \text{Existential quantifier\quad\quad\quad\quad} & \exists xP(x) & P(x)\text{ is true for some \(x\) in \(U\)}
 \end{align*}
 
 \subsubsection{Properties}
 \paragraph{Uniqueness Quantifier}
 The uniqueness quantifier is a commonly used quantifier to express that there is only one \(x\) for which \(P(x)\) is true. It is usually written as \(\exists !\) or \(\exists_1\).
-\[\textcolor{red}{\exists_1}xP(x)\equiv\exists x(P(x)\land\forall y(P(y)\rightarrow y=x))\]
+\[\exists_1xP(x)\equiv\exists x(P(x)\land\forall y(P(y)\rightarrow y=x))\]
 \paragraph{De Morgan's Laws}
 De Morgan's laws for quantifiers state that \(P(x)\) is not true for all \(x\) if and only if there exists an \(x\) for which \(P(x)\) is false and furthermore that if \(P(x)\) is false for all \(x\) if and only if there does not exist an \(x\) for which \(P(x)\) is true.
 \begin{align*}
