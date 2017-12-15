@@ -308,11 +308,12 @@ The empty set is the set that contains no elements. It is denoted by \(\varnothi
 A singleton is a set containing exactly one element.
 
 \subsubsection{Set Equality}
-Two sets are equal if they contain the same elements. If \(A\) and \(B\) are sets then their equality is expressed by \( \forall x(x\in A \leftrightarrow x\in B)\rightarrow A=B \).
+Two sets are equal if they contain the same elements. If \(A\) and \(B\) are sets then their equality is denoted as \(A = B\). Formally this can be expressed as \( \forall x(x\in A \equiv x\in B)\rightarrow A=B \).
 
 \subsubsection{Venn Diagram}
-The below diagram shows the set \(V\) contained in the universal set \(U\).
+Venn diagrams use circles to represent sets and their relation to other sets through their positioning and overlapping. The below diagram shows the set \(V\) contained in the universal set \(U\).
 
+\noindent
 \begin{tikzpicture}
 \draw [fill=Aquamarine](0,0) --(0,2) --(3,2) --(3,0) --(0,0);
 \node [left] at (3,1){\(U\)};
@@ -321,6 +322,9 @@ The below diagram shows the set \(V\) contained in the universal set \(U\).
 \end{tikzpicture}
 
 \subsection{Subsets}
-
+\subsubsection{Definition}
+Set \(A\) is a subset of \(B\) if all elements in \(A\) are also in \(B\). This relation is denoted as \(A\subseteq B\). Formally this can be expressed as \(\forall x(x\in A\rightarrow x\in B)\equiv A\subseteq B\). Every set is always a subset of itself and the empty set \(\varnothing\) is a subset of every other set.
+\paragraph{Proper Subset}
+When \(A\subseteq B\), but \(A\neq B\) then \(A\) is a proper subset of \(B\), which is denoted as \(A\subset B\). Formally this can be expressed as \(\forall x (x\in A\rightarrow x\in B)\land \exists x(x\in B\land x\notin A)\equiv A\subset B\).
 
 \end{document}
