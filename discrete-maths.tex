@@ -318,9 +318,9 @@ Venn diagrams use circles to represent sets and their relation to other sets thr
 \begin{center}
 \begin{tikzpicture}
 \draw (0,0) --(0,2) --(3,2) --(3,0) --(0,0);
-\node [left] at (3,1){\(U\)};
+\node [left] at (3,1.75){\(U\)};
 \draw [fill=yellow] (1.15, 1) circle [radius=0.65];
-\node at (1.25,1){\(V\)};
+\node at (1.15,1){\(V\)};
 \end{tikzpicture}
 \end{center}
 
@@ -354,16 +354,80 @@ The cardinality of the cartesian product is equal to the product of the cardinal
 \subsection{Set Operations}
 The set operators are based on boolean algebra and are analogous to the operators in propositional calculus. There must always be a universal set \(U\) and all sets are assumed to be a subset of \(U\).
 
-\subsubsection{Union}
+\begin{multicols}{2}
+\paragraph{Union}\mbox{}\\
 The union of \(A\) and \(B\) is the set that contains those elements that are contained in \(A\), \(B\) or in both.
-\[ A\cup B \equiv \{x|x\in A \lor x\in B\} \]
+\[ A\cup B = \{x|x\in A \lor x\in B\} \]
 \begin{center}
     \begin{tikzpicture}
     \draw (0,0) --(0,2) --(3,2) --(3,0) --(0,0);
-    \node [left] at (3,1){\(U\)};
+    \node [left] at (3,1.75){\(U\)};
     \draw [yellow, fill=yellow] (1.15, 1) circle [radius=0.65];
     \draw [fill=yellow] (1.85, 1) circle [radius=0.65];
     \draw (1.15, 1) circle [radius=0.65];
+    \node [left] at (1.15,1){\(A\)};
+    \node [right] at (1.85, 1){\(B\)};
+    \end{tikzpicture}
+\end{center}
+
+\paragraph{Intersection}\mbox{}\\
+The intersection of \(A\) and \(B\) is the set that contains those elements that are contained in both \(A\) and \(B\).
+\[ A\cap B = \{x|x\in A \land x\in B\} \]
+\begin{center}
+    \begin{tikzpicture}
+    \draw (0,0) --(0,2) --(3,2) --(3,0) --(0,0);
+    \node [left] at (3,1.75){\(U\)};
+
+    \begin{scope}
+        \clip (1.85, 1) circle [radius=0.65];
+        \draw [yellow, fill=yellow](1.15, 1) circle [radius=0.65];
+    \end{scope}
+    \draw (1.15, 1) circle [radius=0.65];
+    \draw (1.85, 1) circle [radius=0.65];
+    \node [left] at (1.15,1){\(A\)};
+    \node [right] at (1.85, 1){\(B\)};
+    \end{tikzpicture}
+\end{center}
+
+\paragraph{Complement}\mbox{}\\
+The complement of the set \(A\) contains all the elements in \(U\) that are not in \(A\). It is equivalent to \(U-A\).
+\[ \bar{A} = \{x\in U|x\notin A\} \]
+\begin{center}
+    \begin{tikzpicture}
+    \draw [fill=yellow](0,0) --(0,2) --(3,2) --(3,0) --(0,0);
+    \node [left] at (3,1.75){\(U\)};
+    \draw [fill=white](1.15, 1) circle [radius=0.65];
+    \node at (1.15,1){\(A\)};
+    \end{tikzpicture}
+\end{center}
+
+\paragraph{Difference}\mbox{}\\
+The difference \(A-B\) is the set that contains all the elements in \(A\) but not in \(B\). It is the union of \(A\) with the complement of \(B\).
+\[ A-B = \{x|x\in A \land x\notin B\} = A\cap \bar{B} \]
+\begin{center}
+    \begin{tikzpicture}
+    \draw (0,0) --(0,2) --(3,2) --(3,0) --(0,0);
+    \node [left] at (3,1.75){\(U\)};
+    \draw [yellow, fill=yellow](1.15, 1) circle [radius=0.65];
+    \draw [fill=white] (1.85, 1) circle [radius=0.65];
+    \draw (1.15, 1) circle [radius=0.65];
+    \node [left] at (1.15,1){\(A\)};
+    \node [right] at (1.85, 1){\(B\)};
+    \end{tikzpicture}
+\end{center}
+\end{multicols}
+\paragraph{Symmetric Difference}\mbox{}\\
+The symmetric difference is equivalent to a logical exclusive or meaning that the symmetric difference between \(A\) and \(B\) contains the elements that are in \(A\) or in \(B\), but not those that are in both \(A\) and \(B\).
+\[ A\oplus B = (A-B)\cup(B-A) \]
+\begin{center}
+    \begin{tikzpicture}
+    \draw (0,0) --(0,2) --(3,2) --(3,0) --(0,0);
+    \def\firstcircle{(1.15,1) circle [radius = 0.65]}
+    \def\secondcircle{(1.85, 1) circle [radius = 0.65]}
+    \node [left] at (3,1.75){\(U\)};
+
+    \fill [even odd rule, yellow] \firstcircle \secondcircle;
+    \draw \firstcircle \secondcircle;
     \node [left] at (1.15,1){\(A\)};
     \node [right] at (1.85, 1){\(B\)};
     \end{tikzpicture}
