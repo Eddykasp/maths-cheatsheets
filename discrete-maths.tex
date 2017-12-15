@@ -283,7 +283,7 @@ All men are mortal. Socrates is a man. Prove that Socrates is mortal.
 \newpage
 \section{Set Theory}
 A set is a collection of distinct elements without duplicates and the order of elements is unimportant.
-\subsection{Notation}
+\subsection{Definitions}
 \paragraph{Containment}
 \( a \in A \) denotes that \(a\) is an element of the set \(A\), whereas \( a \notin A \) denotes that \(a\) is not contained in \(A\). A set may contain other sets.
 
@@ -310,19 +310,6 @@ A singleton is a set containing exactly one element.
 \subsubsection{Set Equality}
 Two sets are equal if they contain the same elements. If \(A\) and \(B\) are sets then their equality is denoted as \(A = B\).
 \[ \forall x(x\in A \equiv x\in B)\rightarrow A=B \].
-
-\subsubsection{Venn Diagram}
-Venn diagrams use circles to represent sets and their relation to other sets through their positioning and overlapping. The below diagram shows the set \(V\) contained in the universal set \(U\).
-
-\noindent
-\begin{center}
-\begin{tikzpicture}
-\draw (0,0) --(0,2) --(3,2) --(3,0) --(0,0);
-\node [left] at (3,1.75){\(U\)};
-\draw [fill=yellow] (1.15, 1) circle [radius=0.65];
-\node at (1.15,1){\(V\)};
-\end{tikzpicture}
-\end{center}
 
 \subsubsection{Subsets}
 Set \(A\) is a subset of \(B\) if all elements in \(A\) are also in \(B\). This relation is denoted as \(A\subseteq B\).
@@ -432,5 +419,15 @@ The symmetric difference is equivalent to a logical exclusive or meaning that th
     \node [right] at (1.85, 1){\(B\)};
     \end{tikzpicture}
 \end{center}
+
+\subsection{Properties}
+\paragraph{Inclusion-Exclusion Principle}
+The inclusion-exclusion principle helps to calculate the cardinality of unions of sets. The principle states that the cardinality of the union of \(A\) and \(B\) is equal to the cardinality of \(A\) plus the cardinality of \(B\) minus the cardinality of the intersection of \(A\) and \(B\).
+\[ |A\cup B| = |A| + |B| - |A\cap B| \]
+
+\begin{multicols}{2}
+    \paragraph{Identity Laws}
+
+\end{multicols}
 
 \end{document}
