@@ -311,6 +311,7 @@ A singleton is a set containing exactly one element.
 Two sets are equal if they contain the same elements. If \(A\) and \(B\) are sets then their equality is denoted as \(A = B\).
 \[ \forall x(x\in A \equiv x\in B)\rightarrow A=B \].
 
+\newpage
 \subsubsection{Subsets}
 Set \(A\) is a subset of \(B\) if all elements in \(A\) are also in \(B\). This relation is denoted as \(A\subseteq B\).
 \[\forall x(x\in A\rightarrow x\in B)\equiv A\subseteq B\]
@@ -338,6 +339,7 @@ The cartesian product of \(n\) sets is the set of tuples containing all possible
 The cardinality of the cartesian product is equal to the product of the cardinalities of the individual sets.
 \[|A_1\times A_2\times\ldots\times A_n| = \prod_{i=1}^n|A_i| \]
 
+\newpage
 \subsection{Set Operations}
 The set operators are based on boolean algebra and are analogous to the operators in propositional calculus. There must always be a universal set \(U\) and all sets are assumed to be a subset of \(U\).
 
@@ -420,6 +422,7 @@ The symmetric difference is equivalent to a logical exclusive or meaning that th
     \end{tikzpicture}
 \end{center}
 
+\newpage
 \subsection{Properties}
 \paragraph{Inclusion-Exclusion Principle}
 The inclusion-exclusion principle helps to calculate the cardinality of unions of sets. The principle states that the cardinality of the union of \(A\) and \(B\) is equal to the cardinality of \(A\) plus the cardinality of \(B\) minus the cardinality of the intersection of \(A\) and \(B\).
@@ -427,7 +430,8 @@ The inclusion-exclusion principle helps to calculate the cardinality of unions o
 
 \begin{multicols}{2}
     \paragraph{De Morgan's Laws}
-    \
+    \[ \overline{A\cup B} = \bar{A}\cap\bar{B} \]
+    \[ \overline{A\cap B} = \bar{A}\cup\bar{B} \]
 
     \paragraph{Identity Laws}
     \[ A\cup\varnothing = A \]
@@ -436,6 +440,33 @@ The inclusion-exclusion principle helps to calculate the cardinality of unions o
     \paragraph{Domination Laws}
     \[ A\cup U = U \]
     \[ A\cap\varnothing = \varnothing \]
+
+    \paragraph{Idempotent Laws}
+    \[ A\cup A = A \]
+    \[ A\cap A = A \]
+
+    \paragraph{Commutative Laws}
+    \[ A\cup B = B\cup A \]
+    \[ A\cap B = B\cap A \]
+
+    \paragraph{Associative Laws}
+    \[ A\cup(B\cup C) = (A\cup B)\cup C \]
+    \[ A\cap(B\cap C) = (A\cap B)\cap C \]
+
+    \paragraph{Distributive Laws}
+    \[ A\cup(B\cap C) = (A\cup B)\cap (A\cup C) \]
+    \[ A\cap(B\cup C) = (A\cap B)\cup (A\cap C) \]
+
+    \paragraph{Absorption Laws}
+    \[ A\cup(A\cap B) = A \]
+    \[ A\cap(A\cup B) = A \]
+
+    \paragraph{Complement Laws}
+    \[ A\cup\bar{A} = U \]
+    \[ A\cap\bar{A} = \varnothing \]
+
+    \paragraph{Double Negation Law}
+    \[ \overline{\left(\bar{A}\right)} = A \]
 
 \end{multicols}
 
