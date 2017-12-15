@@ -315,12 +315,14 @@ Two sets are equal if they contain the same elements. If \(A\) and \(B\) are set
 Venn diagrams use circles to represent sets and their relation to other sets through their positioning and overlapping. The below diagram shows the set \(V\) contained in the universal set \(U\).
 
 \noindent
+\begin{center}
 \begin{tikzpicture}
 \draw [fill=Aquamarine](0,0) --(0,2) --(3,2) --(3,0) --(0,0);
 \node [left] at (3,1){\(U\)};
 \draw [fill=yellow] (1.25,1) circle [radius=0.6];
 \node at (1.25,1){\(V\)};
 \end{tikzpicture}
+\end{center}
 
 \subsubsection{Subsets}
 Set \(A\) is a subset of \(B\) if all elements in \(A\) are also in \(B\). This relation is denoted as \(A\subseteq B\).
@@ -348,5 +350,23 @@ The cartesian product of \(n\) sets is the set of tuples containing all possible
 \[ A_1\times A_2\times\ldots\times A_n = \{(a_1, a_2,\ldots, a_n)|a_i\in A_i \text{ for } i=1, 2,\ldots,n\} \]
 The cardinality of the cartesian product is equal to the product of the cardinalities of the individual sets.
 \[|A_1\times A_2\times\ldots\times A_n| = \prod_{i=1}^n|A_i| \]
+
+\subsection{Set Operations}
+The set operators are based on boolean algebra and are analogous to the operators in propositional calculus. There must always be a universal set \(U\) and all sets are assumed to be a subset of \(U\).
+
+\subsubsection{Union}
+The union of \(A\) and \(B\) is the set that contains those elements that are contained in \(A\), \(B\) or in both.
+\[ A\cup B \equiv \{x|x\in A \lor x\in B\} \]
+\begin{center}
+    \begin{tikzpicture}
+    \draw (0,0) --(0,2) --(3,2) --(3,0) --(0,0);
+    \node [left] at (3,1){\(U\)};
+    \draw [yellow, fill=yellow] (1.15, 1) circle [radius=0.65];
+    \draw [fill=yellow] (1.85, 1) circle [radius=0.65];
+    \draw (1.15, 1) circle [radius=0.65];
+    \node [left] at (1.15,1){\(A\)};
+    \node [right] at (1.85, 1){\(B\)};
+    \end{tikzpicture}
+\end{center}
 
 \end{document}
