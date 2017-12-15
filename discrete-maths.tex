@@ -308,7 +308,8 @@ The empty set is the set that contains no elements. It is denoted by \(\varnothi
 A singleton is a set containing exactly one element.
 
 \subsubsection{Set Equality}
-Two sets are equal if they contain the same elements. If \(A\) and \(B\) are sets then their equality is denoted as \(A = B\). Formally this can be expressed as \( \forall x(x\in A \equiv x\in B)\rightarrow A=B \).
+Two sets are equal if they contain the same elements. If \(A\) and \(B\) are sets then their equality is denoted as \(A = B\).
+\[ \forall x(x\in A \equiv x\in B)\rightarrow A=B \].
 
 \subsubsection{Venn Diagram}
 Venn diagrams use circles to represent sets and their relation to other sets through their positioning and overlapping. The below diagram shows the set \(V\) contained in the universal set \(U\).
@@ -321,10 +322,31 @@ Venn diagrams use circles to represent sets and their relation to other sets thr
 \node at (1.25,1){\(V\)};
 \end{tikzpicture}
 
-\subsection{Subsets}
-\subsubsection{Definition}
-Set \(A\) is a subset of \(B\) if all elements in \(A\) are also in \(B\). This relation is denoted as \(A\subseteq B\). Formally this can be expressed as \(\forall x(x\in A\rightarrow x\in B)\equiv A\subseteq B\). Every set is always a subset of itself and the empty set \(\varnothing\) is a subset of every other set.
+\subsubsection{Subsets}
+Set \(A\) is a subset of \(B\) if all elements in \(A\) are also in \(B\). This relation is denoted as \(A\subseteq B\).
+\[\forall x(x\in A\rightarrow x\in B)\equiv A\subseteq B\]
+Every set is always a subset of itself and the empty set \(\varnothing\) is a subset of every other set.
 \paragraph{Proper Subset}
-When \(A\subseteq B\), but \(A\neq B\) then \(A\) is a proper subset of \(B\), which is denoted as \(A\subset B\). Formally this can be expressed as \(\forall x (x\in A\rightarrow x\in B)\land \exists x(x\in B\land x\notin A)\equiv A\subset B\).
+When \(A\subseteq B\), but \(A\neq B\) then \(A\) is a proper subset of \(B\), which is denoted as \(A\subset B\).
+\[\forall x (x\in A\rightarrow x\in B)\land \exists x(x\in B\land x\notin A)\equiv A\subset B\].
+
+\subsubsection{Set Cardinality}
+For finite sets the set cardinality describes the number of distinct elements in a set. It is denoted as \(|S|\). The cardinality of the empty set is zero (\(|\varnothing| = 0\)). If \(A\) is the set containing all the letters of the english alphabet, then \(|A| = 26\).
+
+\subsubsection{Power Sets}
+The set of all subsets of a set \(A\) is called the power set of \(A\) and is denoted as \(\mathcal{P}(A)\). If \(|A| = n\), then \(|\mathcal{P}(A)| = 2^n\). For example, given the set \(A = {a, b}\) we get the power set \(\mathcal{P}(A) = \{\varnothing, \{a\}, \{b\}, \{a,b\}\}\).
+
+\subsection{Tuples}
+Tuples are a collection of ordered elements. An \(n\)-tuple is written as \((a_1, a_2, a_3,\ldots,a_n).\) Two \(n\)-tuples are equal if and only if all of their corresponding elements are equal.
+\[(a,b) = (c,d)\equiv (a=c) \land (b=d)\]
+A subset \(R\) of \(A\times B\) is called a relation from the set \(A\) to the set \(B\).
+
+\subsubsection{Cartesian Product}
+The cartesian product \(A\times B\) is the set of ordered pairs \((a,b)\) where \(a\in A\) and \(b\in B\).
+\[A\times B = \{(a,b)|a\in A \land b\in B\}\]
+The cartesian product of \(n\) sets is the set of tuples containing all possible combinations of elements as tuples.
+\[ A_1\times A_2\times\ldots\times A_n = \{(a_1, a_2,\ldots, a_n)|a_i\in A_i \text{ for } i=1, 2,\ldots,n\} \]
+The cardinality of the cartesian product is equal to the product of the cardinalities of the individual sets.
+\[|A_1\times A_2\times\ldots\times A_n| = \prod_{i=1}^n|A_i| \]
 
 \end{document}
