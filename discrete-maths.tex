@@ -472,8 +472,47 @@ The inclusion-exclusion principle helps to calculate the cardinality of unions o
 \newpage
 \section{Relations}
 \subsection{Definitions}
+A relation is the subset of the cartesian product of a number of sets. The simplest relation is a binary relation such as \(R\) from the set \(A\) to the set \(B\).
+\[ R\subset A\times B \]
+Given are the following sets \(A\) and \(B\) and the relation \(R\) from \(A\) to \(B\).
+\[ A = \{a,b\}, B = \{0,1,2\}, R = \{(a,0),(a,2),(b,1),(b,2)\} \]
+This relation can be visualised in following ways.
+\begin{multicols}{2}
+\begin{center}
+\begin{tabular}{c | c c}
+    \(R\) & \(a\) & \(b\) \\
+    \hline
+    \(0\) & X &   \\
+    \(1\) &   & X \\
+    \(2\) & X & X \\
+\end{tabular}
+\end{center}
+\begin{center}
+\begin{tikzpicture}[scale=0.5]
+    \def\circleOne{(1,3.5) circle [radius=0.4]}
+    \def\circleTwo{(1,2.5) circle [radius=0.4]}
+    \def\circleThree{(3,4) circle [radius=0.4]}
+    \def\circleFour{(3,3) circle [radius=0.4]}
+    \def\circleFive{(3,2) circle [radius=0.4]}
+    \draw \circleOne \circleTwo \circleThree \circleFour \circleFive;
+    \node at (1,5){\(A\)};
+    \node at (3,5){\(B\)};
+
+    \node at (1,3.5){\(a\)};
+    \node at (1, 2.5){\(b\)};
+
+    \node at (3,4){\(0\)};
+    \node at (3,3){\(1\)};
+    \node at (3,2){\(2\)};
+
+    \draw [->] (1.5,3.65) --(2.5,3.95);
+    \draw [->] (1.5,3.35) --(2.55,2.25);
+    \draw [->] (1.5,2.65) --(2.5,2.95);
+    \draw [->] (1.5,2.35) --(2.5,2.05);
+\end{tikzpicture}
+\end{center}
+\end{multicols}
 \subsection{Properties}
-\subsection{Operations}
 \subsection{Representing Relations}
 \subsection{Closures}
 \subsection{Equivalence Relations}
