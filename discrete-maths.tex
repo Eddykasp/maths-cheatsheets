@@ -482,7 +482,7 @@ The inclusion-exclusion principle helps to calculate the cardinality of unions o
 
 \subsection{Functions}
 A special kind of relation is a function. A function is a subset of \(A\times B\) with the restriction that no two elements may have the same first element.
-\[ \forall x\left[x\in A\rightarrow \exists y\left(y\in B\land (x,y)\in f\right)\right] \land \forall x,y_1,y_2\left[\left((x,y_1)\in f\land(x,y_2)\right)\rightarrow y_1 = y_2 \right] \]
+\[ \forall x\left[x\in A\rightarrow \exists y\left(y\in B\land (x,y)\in f\right)\right] \land \forall x,y_1,y_2\left[\left((x,y_1)\in f\land(x,y_2)\in f\right)\rightarrow y_1 = y_2 \right] \]
 \subsubsection{Definitions}
 A function is a mapping from one set to another. \(A\) and \(B\) are two non-empty sets and the function \(f\) is a mapping from \(A\) to \(B\).
 \[f:A\rightarrow B\]
@@ -491,7 +491,7 @@ Each element of \(A\) is assigned to exactly to exactly one element \(B\).
 In this case the set \(A\) is the domain of the function and the set \(B\) is the co-domain. The range is a subset of the co-domain and contains all the elements of \(B\) that \(f\) actually maps to.
 
 \begin{center}
-\begin{tikzpicture}
+\begin{tikzpicture}[scale=0.75]
     \def\circleOne{(1,1) circle [radius=0.4]}
     \def\circleTwo{(1,2) circle [radius=0.4]}
     \def\circleThree{(1,3) circle [radius=0.4]}
@@ -516,8 +516,84 @@ In this case the set \(A\) is the domain of the function and the set \(B\) is th
 \end{center}
 
 \subsubsection{Properties}
+\paragraph{Addition \& Multiplication}
+\[ (f_1 + f_2)(x) = f_1(x) + f_2(x) \]
+\[ (f_1 f_2)(x) = f_1(x) f_2(x) \]
+\paragraph{Increasing \& Decreasing}
+\subparagraph{Increasing}
+\[ \forall a,b\in A\left(a<b\rightarrow f(a)\leq f(b)\right) \]
+\subparagraph{Strictly Increasing}
+\[ \forall a,b\in A\left(a<b\rightarrow f(a)< f(b)\right) \]
+\subparagraph{Decreasing}
+\[ \forall a,b\in A\left(a<b\rightarrow f(a)\geq f(b)\right) \]
+\subparagraph{Strictly Decreasing}
+\[ \forall a,b\in A\left(a<b\rightarrow f(a)> f(b)\right) \]
 
 \subsubsection{Types of Functions}
+\paragraph{Injection}
+Functions that are injective have a one-to-one mapping from \(A\) to \(B\). That means that every \(a\) is assigned to one \(b\) and every \(b\) is the image of at most one pre-image \(a\).
+\[ \forall a,b(f(a)=f(b)\rightarrow a=b) \]
+\begin{center}
+\begin{tikzpicture}[scale=0.5]
+    \def\circleTwo{(1,2) circle [radius=0.4]}
+    \def\circleThree{(1,3) circle [radius=0.4]}
+    \def\circleFour{(1,4) circle [radius=0.4]}
+    \def\circleSix{(3,1) circle [radius=0.4]}
+    \def\circleSeven{(3,2) circle [radius=0.4]}
+    \def\circleEight{(3,3) circle [radius=0.4]}
+    \def\circleNine{(3,4) circle [radius=0.4]}
+    \draw \circleTwo \circleThree \circleFour \circleSix \circleSeven \circleEight \circleNine;
+    \node at (1,5){\(A\)};
+    \node at (3,5){\(B\)};
+    \draw [->] (1.5,3.85) --(2.5,3.15);
+    \draw [->] (1.5,3.15) --(2.5,3.85);
+    \draw [->] (1.5,1.85) --(2.5,1.15);
+\end{tikzpicture}
+\end{center}
+
+\paragraph{Surjection}
+A surjective function maps \(A\) onto \(B\), which means that for every element in \(B\) has a pre-image.
+\[ \forall b\in B\left[\exists a\in A(f(a) = b)\right] \]
+\begin{center}
+\begin{tikzpicture}[scale=0.5]
+    \def\circleTwo{(1,2) circle [radius=0.4]}
+    \def\circleThree{(1,3) circle [radius=0.4]}
+    \def\circleFour{(1,4) circle [radius=0.4]}
+    \def\circleSix{(1,1) circle [radius=0.4]}
+    \def\circleSeven{(3,2) circle [radius=0.4]}
+    \def\circleEight{(3,3) circle [radius=0.4]}
+    \def\circleNine{(3,4) circle [radius=0.4]}
+    \draw \circleTwo \circleThree \circleFour \circleSix \circleSeven \circleEight \circleNine;
+    \node at (1,5){\(A\)};
+    \node at (3,5){\(B\)};
+    \draw [->] (1.5,3.85) --(2.5,3.15);
+    \draw [->] (1.5,3.15) --(2.5,3.85);
+    \draw [->] (1.5,2.15) --(2.5,2.85);
+    \draw [->] (1.5,1.15) --(2.5,1.85);
+\end{tikzpicture}
+\end{center}
+
+\paragraph{Bijection}
+A bijection is a function, which is both injective and surjective.
+\begin{center}
+\begin{tikzpicture}[scale=0.5]
+    \def\circleTwo{(1,2) circle [radius=0.4]}
+    \def\circleThree{(1,3) circle [radius=0.4]}
+    \def\circleFour{(1,4) circle [radius=0.4]}
+    \def\circleFive{(1,1) circle [radius=0.4]}
+    \def\circleSix{(3,1) circle [radius=0.4]}
+    \def\circleSeven{(3,2) circle [radius=0.4]}
+    \def\circleEight{(3,3) circle [radius=0.4]}
+    \def\circleNine{(3,4) circle [radius=0.4]}
+    \draw \circleTwo \circleThree \circleFour \circleFive \circleSix \circleSeven \circleEight \circleNine;
+    \node at (1,5){\(A\)};
+    \node at (3,5){\(B\)};
+    \draw [->] (1.5,3.85) --(2.5,3.15);
+    \draw [->] (1.5,3.15) --(2.5,3.85);
+    \draw [->] (1.5,2) --(2.5,2);
+    \draw [->] (1.5,1) --(2.5,1);
+\end{tikzpicture}
+\end{center}
 
 \subsubsection{Inverse Function}
 
