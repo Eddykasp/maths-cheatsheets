@@ -561,13 +561,31 @@ In an anti-symmetric relation for every pair which has a symmetric counterpart t
 In a transitive relation if \((a,b)\in R\) and \((b,c \in R\) then \(a,c\in R\) must also be true.
 \[ \forall a\forall b\forall c[(a,b)\in R\land (b,c)\in R\rightarrow (a,c)\in R] \]
 
+\subsection{Equivalence Classes and Partitions}
 \subsubsection{Equivalence Relations}
 If a relation is reflexive, symmetric and transitive then it is an equivalence relation meaning that for a related pair \((a,b)\), \(a\) and \(b\) are equivalent.
 \[ a\sim b \]
 Examples of equivalence relations are \(=\),\(equiv\).
 
-\subsection{Equivalence Classes and Partitions}
-\subsection{Comparability}
+\subsubsection{Equivalence Classes}
+When elements of a set have some notion of equivalence they can be partitioned into a set of equivalence classes where all elements in the same equivalence class have an equivalence relation. The equivalent class of the element \(a\) from the set \(S\), which has an equivalence relation \(\sim\), is the set in which every element is equivalent to \(a\).
+\[ [a] = \left\{x\in S|x\sim a\right\} \]
+In set partitioned into equivalent classes \(x\) is equivalent to \(y\) if and only if \(x\) and \(y\) are in the same equivalence class.
+\[ x\sim y \leftrightarrow [x]=[y] \leftrightarrow [x]\cap[y]\not=\varnothing \]
+
+\subsubsection{Partition of a set}
+A set can be partitioned into a many disjoint non-empty subsets. The union of these subsets is the original set.
+\[ S = \bigcup_i A_i \]
+\paragraph{Properties}
+None of the subsets can be an empty set and no two subsets have any common elements.
+\[ A_i \not= \varnothing \]
+\[ i\not=j \rightarrow A_i\cap A_j = \varnothing \]
+Partitioning a set into equivalent classes follows the same principle.
+\[ \bigcup_{a\in A} [a] = A \]
+
+\subsubsection{Partial Orderings}
+
+\subsubsection{Comparability}
 
 \subsection{Functions}
 A special kind of relation is a function. A function is a subset of \(A\times B\) with the restriction that no two elements may have the same first element.
