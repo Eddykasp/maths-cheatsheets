@@ -519,13 +519,22 @@ The following notation can be used to simply show whether or not the pair \((a,b
 The number of relations on a set \(A\) is equal to \(2\) to the power of of the cardinality of its cartesian product.
 \[ 2^{|A\times A|} = 2^{|A|^2} \]
 \subsection{Properties}
+Relations are sets so the regular set operations can be used on them. Additionally it is possible to create a composition of two relations. If \(R_1\) is a relation from \(A\) to \(B\) and \(R_2\) is relation from \(B\) to \(C\) then \(R_2\circ R_1\) is a relation from \(A\) to \(C\).
+\paragraph{Power of a relation}
+\[ R^n = \left\{
+\begin{array}{lr}
+    R, & \text{for } n=1 \\
+    R^{n-1}\circ R, & \text{for } n>1 \\
+\end{array}
+\right\}
+\]
 \subsubsection{Reflexivity}
 A relation is reflexive if every element is related to itself.
-\[ \forall x[x\in U\rightarrow (x,x)\in R] \]
+\[ \forall a[a\in U\rightarrow (a,a)\in R] \]
 This property can be seen in a matrix if there is a diagonal line through the matrix.
 \begin{center}
     \begin{tabular}{c | c c c}
-              & \(a\) & \(b\) & \(c\) \\
+        \(R\) & \(a\) & \(b\) & \(c\) \\
         \hline
         \(a\) & \(1\) &       &       \\
         \(b\) &       & \(1\) &       \\
@@ -534,9 +543,23 @@ This property can be seen in a matrix if there is a diagonal line through the ma
 \end{center}
 If this property is negated then a relation is irreflexive.
 \subsubsection{Symmetry}
-
+In a symmetric relation for every pair \((a,b)\) in \(R\) there must also be a pair \(b,a\).
+\[ \forall a\forall b[(a,b)\in R \rightarrow (b,a)\in R] \]
+The resulting matrix will also be a symmetric matrix.
+\begin{center}
+    \begin{tabular}{c | c c c}
+        \(R\) & \(a\) & \(b\) & \(c\) \\
+        \hline
+        \(a\) & \(0\) & \(1\) & \(0\) \\
+        \(b\) & \(1\) & \(0\) & \(1\) \\
+        \(c\) & \(0\) & \(1\) & \(0\) \\
+    \end{tabular}
+\end{center}
+In an anti-symmetric relation for every pair which has a symmetric counterpart the elements must be related to themselves.
+\[ \forall a\forall y[(a,b)\in R \land (b,a)\in R \rightarrow x=y] \]
 \subsubsection{Transitivity}
-
+In a transitive relation if \((a,b)\in R\) and \((b,c \in R\) then \(a,c\in R\) must also be true.
+\[ \forall a\forall b\forall c[(a,b)\in R\land (b,c)\in R\rightarrow (a,c)\in R] \]
 
 \subsection{Representing Relations}
 \subsection{Closures}
