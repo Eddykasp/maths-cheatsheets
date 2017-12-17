@@ -555,7 +555,7 @@ The resulting matrix will also be a symmetric matrix.
         \(c\) & \(0\) & \(1\) & \(0\) \\
     \end{tabular}
 \end{center}
-In an anti-symmetric relation for every pair which has a symmetric counterpart the elements must be related to themselves.
+In an antisymmetric relation for every pair which has a symmetric counterpart the elements must be related to themselves.
 \[ \forall a\forall y[(a,b)\in R \land (b,a)\in R \rightarrow x=y] \]
 \subsubsection{Transitivity}
 In a transitive relation if \((a,b)\in R\) and \((b,c \in R\) then \(a,c\in R\) must also be true.
@@ -565,7 +565,7 @@ In a transitive relation if \((a,b)\in R\) and \((b,c \in R\) then \(a,c\in R\) 
 \subsubsection{Equivalence Relations}
 If a relation is reflexive, symmetric and transitive then it is an equivalence relation meaning that for a related pair \((a,b)\), \(a\) and \(b\) are equivalent.
 \[ a\sim b \]
-Examples of equivalence relations are \(=\),\(equiv\).
+Examples of equivalence relations are \(=,\equiv\).
 
 \subsubsection{Equivalence Classes}
 When elements of a set have some notion of equivalence they can be partitioned into a set of equivalence classes where all elements in the same equivalence class have an equivalence relation. The equivalent class of the element \(a\) from the set \(S\), which has an equivalence relation \(\sim\), is the set in which every element is equivalent to \(a\).
@@ -583,9 +583,12 @@ None of the subsets can be an empty set and no two subsets have any common eleme
 Partitioning a set into equivalent classes follows the same principle.
 \[ \bigcup_{a\in A} [a] = A \]
 
-\subsubsection{Partial Orderings}
-
-\subsubsection{Comparability}
+\subsubsection{Partially Ordered Sets}
+A partially ordered set, also known as a poset, consists of a set together with a binary relation indicating that, for certain pairs of the set, one element precedes the other. Not every pair must be comparable in a partial order. In order to be a partial order, the relation must be reflexive, antisymmetric and transitive. A relation which is a partial order is denoted by \(\preceq\). Given the poset \((S,\preceq)\) and the elements \(a\in S\) and \(b\in S\), then \( a\preceq b\) means that \(a\) precedes \(b\).
+\paragraph{Totally Ordered Set}
+If all elements in a set are comparable, then it is known as a totally ordered set.
+\paragraph{Well Ordered Set}
+If the set contains a least element then it is known as a well ordered set.
 
 \subsection{Functions}
 A special kind of relation is a function. A function is a subset of \(A\times B\) with the restriction that no two elements may have the same first element.
