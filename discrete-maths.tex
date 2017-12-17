@@ -512,12 +512,32 @@ This relation can be visualised in the following ways.
 \end{tikzpicture}
 \end{center}
 \end{multicols}
+\noindent
 The following notation can be used to simply show whether or not the pair \((a,b)\) is in \(R\).
 \[ a\mathrel{R}b = (a,b)\in R \]
 \[ a\not\mathrel{R}b = (a,b)\notin R \]
 The number of relations on a set \(A\) is equal to \(2\) to the power of of the cardinality of its cartesian product.
-\[ 2^{|A\times A} = 2^{|A|^2} \]
+\[ 2^{|A\times A|} = 2^{|A|^2} \]
 \subsection{Properties}
+\subsubsection{Reflexivity}
+A relation is reflexive if every element is related to itself.
+\[ \forall x[x\in U\rightarrow (x,x)\in R] \]
+This property can be seen in a matrix if there is a diagonal line through the matrix.
+\begin{center}
+    \begin{tabular}{c | c c c}
+              & \(a\) & \(b\) & \(c\) \\
+        \hline
+        \(a\) & \(1\) &       &       \\
+        \(b\) &       & \(1\) &       \\
+        \(c\) &       &       & \(1\) \\
+    \end{tabular}
+\end{center}
+If this property is negated then a relation is irreflexive.
+\subsubsection{Symmetry}
+
+\subsubsection{Transitivity}
+
+
 \subsection{Representing Relations}
 \subsection{Closures}
 \subsection{Equivalence Relations}
