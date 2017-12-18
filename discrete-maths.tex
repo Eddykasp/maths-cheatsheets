@@ -769,7 +769,7 @@ Relational algebra defines additional operators for operations between two relat
 \paragraph{Employee}\mbox{}\\
     \begin{tabular}{| c | c | c |}
         \hline
-        Name  & EmployeeId & DepartmentId \\
+        Name  & EmployeeId & DepartmentName \\
         \hline
         Harry   & 3415     & Finance      \\
         Sally   & 2241     & Sales        \\
@@ -789,6 +789,30 @@ Relational algebra defines additional operators for operations between two relat
         \hline
     \end{tabular}
 \end{multicols}
+\subsubsection{Projection}
+\[ \Pi_{a_1,\ldots, a_n}(R) \]
+\(a_1,\ldots,a_n\) are names of attributes in the relation \(R\). The result of the projection is a new relation containing only the attributes specified in the projection.
+\subsubsection{Selection}
+\[ \sigma_\varphi(R) \]
+\(\varphi\) is a propositional formula. The selection returns a relation containing only those tuples for which \(\varphi\) is true.
+\subsubsection{Rename}
+\[ \rho_{a/b}(R) \]
+The result of renaming is identical to the original relation, but the the attribute \(a\) is renamed to \(b\).
+\subsubsection{Join}
+\[ R\Join S \]
+The natural join merges two relations on a common attribute. If there is no common attribute then the natural join becomes the cartesian product combining all possible attributes. Joining the two relations from earlier on the common attribute DepartmentName, would yield the below relation.
+\paragraph{Employee \(\Join\) Department}\mbox{}\\
+\begin{tabular}{| c | c | c | c |}
+    \hline
+    Name   & EmployeeId & DepartmentName & Manager \\
+    \hline
+    Harry   & 3415      & Finance        & George  \\
+    Sally   & 2241      & Sales          & Harriet \\
+    George  & 3401      & Finance        & George  \\
+    Harriet & 2202      & Sales          & Harriet \\
+    \hline
+\end{tabular}
+
 \section{Graphs}
 
 \subsection{Definitions}
