@@ -813,10 +813,40 @@ The natural join merges two relations on a common attribute. If there is no comm
     \hline
 \end{tabular}
 
+\newpage
 \section{Graphs}
 
 \subsection{Definitions}
+A graph \(G\) is defined by its vertices \(V\) and edges \(E\). The set of vertices must be non-empty. Every edge in \(E\) has one or two endpoints.
 
+\begin{align*}
+    G&=(V,E) \\
+    V&=\{a,b,c,d\} \\
+    E&=\{(a,b),(a,c),(b,c),(b,d),(c,d)\}
+\end{align*}
+\begin{center}
+\begin{tikzpicture}
+    \def\verticeD{(0,0) circle [radius=0.07]}
+    \def\verticeC{(3,0) circle [radius=0.07]}
+    \def\verticeA{(0,2) circle [radius=0.07]}
+    \def\verticeB{(3,2) circle [radius=0.07]}
+
+    \fill \verticeA \verticeB \verticeC \verticeD;
+    \node [above] at (0,2.1){\(a\)};
+    \node [above] at (3,2.1){\(b\)};
+    \node [below] at (0,-0.1){\(d\)};
+    \node [below] at (3,-0.1){\(c\)};
+
+    \def\edgeAB{(0.2,2) --(2.8,2)}
+    \def\edgeAC{(0.14,1.9) --(2.86,0.1)}
+    \def\edgeBC{(3,1.8) --(3,0.2)}
+    \def\edgeBD{(2.86,1.9) --(0.14,0.1)}
+    \def\edgeCD{(0.2,0) --(2.8,0)}
+    \draw \edgeAB \edgeAC \edgeBC \edgeBD \edgeCD;
+
+\end{tikzpicture}
+\end{center}
+Two vertices are adjacent or neighbouring if they have a connecting edge. An edge is incident with the vertices it connects.
 \subsubsection{Types of Graphs}
 
 \subsubsection{Neighbourhood}
@@ -835,7 +865,7 @@ The natural join merges two relations on a common attribute. If there is no comm
 
 \paragraph{Wheels}
 
-\paragraph{\(n\)-Cube}
+\paragraph{\(n\)-Cubes}
 
 \subsubsection{Computer Network Architecture}
 
