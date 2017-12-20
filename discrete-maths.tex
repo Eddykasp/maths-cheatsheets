@@ -957,7 +957,43 @@ A cycle \(C_n\) is a graph with all vertices connected so that there is exactly 
 \paragraph{Wheels}
 If you add an addtional vertice to a cycle and connect all vertices of the cycle to it, then you get a wheel.
 \paragraph{\(n\)-Cubes}
+An \(n\)-Cube \(Q_n\) is a graph which has \( 2^n \) vertices. With \( Q_1 \) being a line, \(Q_2\) a square, \( Q_3 \) a cube, \( Q_4 \) a hypercube and so on. They can be used to represent bitstrings of length \(n\) with each dimension of \(Q_n\) corresponding to a different index in the bitstring. For example, to represent a bitstring of length three we need to use \(Q_3\), where each of the eight vertices of the graph correspond to a possible state of the bitstring. Flipping a single bit is equivalent to moving along one of the edges of the graph. The axes \(x,y,z\) could correspond to the indices \(0,1,2\), therefore changing the bitstring from \(010\) to \(011\) moving along the edge on the \(z\)-axis.
+\begin{center}
+    \begin{tikzpicture}[scale=1.4]
+        \fill (0,0) circle [radius=0.05];
+        \node [left] at (0,0){\(000\)};
+        \fill (1,0) circle [radius=0.05];
+        \node [right] at (1,0){\(100\)};
+        \fill (0,1) circle [radius=0.05];
+        \node [left] at (0,1){\(010\)};
+        \fill (1,1) circle [radius=0.05];
+        \node [right] at (1,1){\(110\)};
 
+        \draw (0.1,0) --(0.9,0);
+        \draw (0,0.1) --(0,0.9);
+        \draw (1,0.1) --(1,0.9);
+        \draw (0.1,1) --(0.9,1);
+
+        \fill (0.5,0.5) circle [radius=0.05];
+        \node [left] at (0.5,0.5){\(001\)};
+        \fill (1.5,0.5) circle [radius=0.05];
+        \node [right] at (1.5,0.5){\(101\)};
+        \fill (0.5,1.5) circle [radius=0.05];
+        \node [left] at (0.5,1.5){\(011\)};
+        \fill (1.5,1.5) circle [radius=0.05];
+        \node [right] at (1.5,1.5){\(111\)};
+
+        \draw (0.6,0.5) --(1.4,0.5);
+        \draw (0.5,0.6) --(0.5,1.4);
+        \draw (1.5,0.6) --(1.5,1.4);
+        \draw (0.6,1.5) --(1.4,1.5);
+
+        \draw (0.07,0.07) --(0.43,0.43);
+        \draw (1.07,0.07) --(1.43,0.43);
+        \draw (0.07,1.07) --(0.43,1.43);
+        \draw (1.07,1.07) --(1.43,1.43);
+    \end{tikzpicture}
+\end{center}
 \subsubsection{Computer Network Architecture}
 
 \subsubsection{Bipartite Graphs}
