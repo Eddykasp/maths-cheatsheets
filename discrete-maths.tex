@@ -864,12 +864,13 @@ If \(A\) is a subset of \(V\), then \(N(A)\) is the set of all vertices that are
 \[ N(A) = \bigcup_{v\in A} N(v) \]
 \subsubsection{Degree of a Vertex}
 \paragraph{Undirected Graphs}
-In an undirected graph, the degree of a vertex \(deg(v)\) denotes the number of edges incident with the vertice. Loops contribute \(2\) to the degree.
+In an undirected graph, the degree of a vertex \(\mathrm{deg}(v)\) denotes the number of edges incident with the vertice. Loops contribute \(2\) to the degree.
 \subparagraph{Handshaking Theorem}
 If \(G=(V,E)\) is an undirected graph with \(m\) edges, then every new edge increases the degree of two vertices by one.
-\[ 2m = \sum_{v\in V} deg(v) \]
+\[ 2m = \sum_{v\in V} \mathrm{deg}(v) \]
 \paragraph{Directed Graphs}
-
+A directed graph's vertices have an in-degree \(\mathrm{deg}^-(v)\), which corresponds to the number of edges terminating at \(v\) and an out-degree \(\mathrm{deg}^+(v)\), which corresponds to the number of edges originating from \(v\). The sum of in-degrees equals the number of out-degrees and the number of edges.
+\[ |E| = \sum_{v\in V}\mathrm{deg}^-(v) = \sum_{v\in V}\mathrm{deg}^+(v) \]
 \subsection{Special Types of Graphs}
 
 \paragraph{Complete Graphs}
