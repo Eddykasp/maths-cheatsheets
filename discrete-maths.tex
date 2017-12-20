@@ -874,7 +874,45 @@ A directed graph's vertices have an in-degree \(\mathrm{deg}^-(v)\), which corre
 \subsection{Special Types of Graphs}
 
 \paragraph{Complete Graphs}
+A complete graph \(K_n\) has \(n\) vertices, where every vertice is connected to every other vertice.
+\newline
+\begin{center}
+\begin{tabular}{ c  c  c  c }
+    \(K_1\) & \(K_2\) & \(K_3\) & \(K_4\) \\
+    \begin{tikzpicture}
+        \fill (0,0) circle [radius=0.05];
+    \end{tikzpicture} &
 
+    \begin{tikzpicture}
+        \fill (0,0) circle [radius=0.05];
+        \fill (1,0) circle [radius=0.05];
+        \draw (0.1,0) --(0.9,0);
+    \end{tikzpicture} &
+
+    \begin{tikzpicture}
+        \fill (0,0) circle [radius=0.05];
+        \fill (1,0) circle [radius=0.05];
+        \draw (0.1,0) --(0.9,0);
+        \fill (0.5,0.866) circle [radius=0.05];
+        \draw (0.05,0.0866) --(0.45,0.7794);
+        \draw (0.95,0.0866) --(0.55,0.7794);
+    \end{tikzpicture} &
+
+    \begin{tikzpicture}
+        \fill (0,0) circle [radius=0.05];
+        \fill (1,0) circle [radius=0.05];
+        \draw (0.1,0) --(0.9,0);
+        \fill (0,1) circle [radius=0.05];
+        \fill (1,1) circle [radius=0.05];
+        \draw (0,0.1) --(0,0.9);
+        \draw (1,0.1) --(1,0.9);
+        \draw (0.1,1) --(0.9,1);
+
+        \draw (0.071,0.071) --(0.929,0.929);
+        \draw (0.071,0.929) --(0.929,0.071);
+    \end{tikzpicture} \\
+\end{tabular}
+\end{center}
 \paragraph{Cycles}
 
 \paragraph{Wheels}
