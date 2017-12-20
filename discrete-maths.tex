@@ -914,7 +914,46 @@ A complete graph \(K_n\) has \(n\) vertices, where every vertice is connected to
 \end{tabular}
 \end{center}
 \paragraph{Cycles}
+A cycle \(C_n\) is a graph with all vertices connected so that there is exactly one cycle. There must be at least three vertices.
+\newline
+\begin{center}
+\begin{tabular}{ c  c  c }
+    \(C_3\) & \(C_4\) & \(C_5\) \\
+    \begin{tikzpicture}
+        \fill (0,0) circle [radius=0.05];
+        \fill (1,0) circle [radius=0.05];
+        \draw (0.1,0) --(0.9,0);
+        \fill (0.5,0.866) circle [radius=0.05];
+        \draw (0.05,0.0866) --(0.45,0.7794);
+        \draw (0.95,0.0866) --(0.55,0.7794);
+    \end{tikzpicture} &
 
+    \begin{tikzpicture}
+        \fill (0,0) circle [radius=0.05];
+        \fill (1,0) circle [radius=0.05];
+        \draw (0.1,0) --(0.9,0);
+        \fill (0,1) circle [radius=0.05];
+        \fill (1,1) circle [radius=0.05];
+        \draw (0,0.1) --(0,0.9);
+        \draw (1,0.1) --(1,0.9);
+        \draw (0.1,1) --(0.9,1);
+    \end{tikzpicture} &
+
+    \begin{tikzpicture}
+        \fill (1.1841,0) circle [radius=0.05];
+        \fill (0.2795, 0) circle [radius=0.05];
+        \fill (0,0.8603) circle [radius=0.05];
+        \fill (0.7318,1.3920) circle [radius=0.05];
+        \fill (1.4636,0.8603) circle [radius=0.05];
+
+        \draw (1.0841,0) --(0.3795,0);
+        \draw (0.2516,0.086) --(0.0279,0.7743);
+        \draw (0.054,0.92) --(0.67,1.335);
+        \draw (1.2120,0.086) --(1.4357,0.7743);
+        \draw (1.4096,0.92) --(0.7936,1.335);
+    \end{tikzpicture} \\
+\end{tabular}
+\end{center}
 \paragraph{Wheels}
 
 \paragraph{\(n\)-Cubes}
