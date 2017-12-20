@@ -858,11 +858,16 @@ In a pseudograph there can be multiple edges as well as loops.
 A directed graph has directed edges also known as arcs, so every edge is an ordered pair of vertices.
 
 \subsubsection{Neighbourhood}
+The neighbourhood of a vertex \(N(v)\) is the set of all neighbours of that vertex. It is a subset of \(V\).
 
+If \(A\) is a subset of \(V\), then \(N(A)\) is the set of all vertices that are adjacent to at least one vertice in \(A\).
+\[ N(A) = \bigcup_{v\in A} N(v) \]
 \subsubsection{Degree of a Vertex}
-
 \paragraph{Undirected Graphs}
-
+In an undirected graph, the degree of a vertex \(deg(v)\) denotes the number of edges incident with the vertice. Loops contribute \(2\) to the degree.
+\subparagraph{Handshaking Theorem}
+If \(G=(V,E)\) is an undirected graph with \(m\) edges, then every new edge increases the degree of two vertices by one.
+\[ 2m = \sum_{v\in V} deg(v) \]
 \paragraph{Directed Graphs}
 
 \subsection{Special Types of Graphs}
