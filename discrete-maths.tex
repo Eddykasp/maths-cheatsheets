@@ -1056,11 +1056,33 @@ In the above example we are limited to undirected graphs and we cannot represent
 \begin{multicols}{2}
     \begin{center}
         \begin{tikzpicture}
+            \def\vA{(0,1) circle [radius=0.07]}
+            \def\vB{(0,0) circle [radius=0.07]}
+            \def\vC{(1,1) circle [radius=0.07]}
+            \def\vD{(1,0) circle [radius=0.07]}
 
+            \fill \vA \vB \vC \vD;
+            \node [left] at (0,1){\(a\)};
+            \node [left] at (0,0){\(b\)};
+            \node [right] at (1,1){\(c\)};
+            \node [right] at (1,0){\(d\)};
+
+            \draw [->] (0,0.1) --(0,0.9);
+            \draw [->] (0.1,0.9) --(0.9,0.1);
+            \draw [->] (0.1,0) --(0.9,0);
+            \draw [->] (1,0.1) --(1,0.9);
+            \draw [->] (0.9,0.9) --(0.1,0.1);
         \end{tikzpicture}
     \end{center}
     \begin{tabular}{| c | c |}
-
+        \hline
+        initial vertex & terminal vertex \\
+        \hline
+        \(a\)          & \(d\) \\
+        \(b\)          & \(a,d\) \\
+        \(c\)          & \(b\) \\
+        \(d\)          & \(c\) \\
+        \hline
     \end{tabular}
 \end{multicols}
 \subsection{Isomorphism of Graphs}
