@@ -1105,7 +1105,34 @@ A function mapping a one-to-one correspondence from \(G_1=(V_1, E_1)\) to \(G_2=
 \subsection{Paths}
 A path is a seqence of connected edges between two vertices. A path is known as a circuit when the initial and terminal vertices are the same. A path is said to pass through vertices and traverse edges. A simple path contains no edge more than once. The degree of seperation between two vertices is equal to the length of the shortest path between them.
 \subsubsection{Connectedness}
+All vertices in an undirected graph are connected if there is a path between any pair of vertices.
+\paragraph{Connected Components}
+A connected component is a connected subgraph that is not a proper subgraph of another connected component.
+\begin{center}
+    \begin{tikzpicture}
+        \draw [red] (1,1) circle [radius=1.3];
+        \draw [ForestGreen] (4,2) circle [radius=1.3];
+        \draw [blue] (7,1) circle [radius=1.3];
 
+        \fill (0.5,1) circle [radius=0.07];
+        \node [left] at (0.5,1){\(a\)};
+        \fill (1.5,1) circle [radius=0.07];
+        \node [right] at (1.5,1){\(b\)};
+        \draw (0.6,1) --(1.4,1);
+
+        \fill (3.5,1.5) circle [radius=0.07];
+        \node [left] at (3.5,1.5){\(c\)};
+        \fill (4,2.5) circle [radius=0.07];
+        \node [above] at (4,2.5){\(d\)};
+        \fill (4.5,1.5) circle [radius=0.07];
+        \node [right] at (4.5,1.5){\(e\)};
+        \draw (3.6,1.5) --(4.4,1.5);
+        \draw (3.55,1.63) --(3.95,2.37);
+
+        \fill (7,1) circle [radius=0.07];
+        \node [above] at (7,1){\(f\)};
+    \end{tikzpicture}
+\end{center}
 \subsubsection{Vertex Connectivity}
 
 \subsubsection{Edge Connectivity}
