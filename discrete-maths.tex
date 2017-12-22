@@ -1014,6 +1014,55 @@ A bipartite graph is a simple graph where \(V\) can be partitioned into two disj
 Given the two graphs \(G=(V,E)\) and \(H=(W,F)\), \(H\) is a proper subgraph of \(F\) if \(W\subset V\) and \(F\subset E\). The union of two graphs is performed by taking the the union of the sets of vertices and the union of the sets of edges. Given the graphs \(G_1=(V_1,E_1)\) and \(G_2=(V_2, E_2)\) then \(G_1\cup G_2=(V_1\cup V_2, E_1\cup E_2)\).
 \subsection{Representation of Graphs}
 
+\subsubsection{Adjacency Lists}
+An adjacency list consists of a list of all vertices, which each have an associated list of adjacent vertices.
+\begin{multicols}{2}
+    \begin{center}
+    \begin{tikzpicture}
+        \def\vA{(0,1) circle [radius=0.07]}
+        \def\vB{(1,2) circle [radius=0.07]}
+        \def\vC{(1,0) circle [radius=0.07]}
+        \def\vD{(2,1) circle [radius=0.07]}
+        \def\vE{(2,0) circle [radius=0.07]}
+
+        \fill \vA \vB \vC \vD \vE;
+        \node [left] at (0,1){\(a\)};
+        \node [above] at (1,2){\(b\)};
+        \node [left] at (1,0){\(c\)};
+        \node [right] at (2,1){\(d\)};
+        \node [right] at (2,0){\(e\)};
+
+        \draw (0.1,0.9) --(0.9,0.1);
+        \draw (0.1,1) --(1.9,1);
+
+        \draw (1,1.9) --(1,0.1);
+
+        \draw (1.1,0) --(1.9,0);
+    \end{tikzpicture}
+    \end{center}
+    \begin{tabular}{| c | c |}
+        \hline
+        vertex & adjacent vertices \\
+        \hline
+        \(a\)  & \(c,d\) \\
+        \(b\)  & \(c\) \\
+        \(c\)  & \(a,b,e\) \\
+        \(d\)  & \(a\) \\
+        \(e\)  & \(c\) \\
+        \hline
+    \end{tabular}
+\end{multicols}
+In the above example we are limited to undirected graphs and we cannot represent multiple edges. In order to represent a digraph, the first column contains the initial vertices and the second column contains the connected terminal vertices.
+\begin{multicols}{2}
+    \begin{center}
+        \begin{tikzpicture}
+
+        \end{tikzpicture}
+    \end{center}
+    \begin{tabular}{| c | c |}
+
+    \end{tabular}
+\end{multicols}
 \subsection{Isomorphism of Graphs}
 
 \subsection{Paths}
