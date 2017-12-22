@@ -1085,6 +1085,14 @@ In the above example we are limited to undirected graphs and we cannot represent
         \hline
     \end{tabular}
 \end{multicols}
+\subsubsection{Adjacency Matrix}
+Another representation, more suitable for dense graphs, is an adjacency matrix.
+\[ A_G=[a_{ij}], a_{ij}=\left\{\begin{array}{lr}
+    1, & \text{if } (v_i, v_j) \text{ is an edge of G} \\
+    0, & \text{otherwise} \\
+\end{array}\right\} \]
+To represent multigraphs the number of edges between \(i\) and \(j\) is used instead of one. A simple graph will produce a symmetrical matrix.
+
 \subsection{Isomorphism of Graphs}
 
 \subsection{Paths}
