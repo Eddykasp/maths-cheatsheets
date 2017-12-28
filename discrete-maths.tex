@@ -1133,7 +1133,15 @@ A connected component is a connected subgraph that is not a proper subgraph of a
         \node [above] at (7,1){\(f\)};
     \end{tikzpicture}
 \end{center}
-\subsubsection{Vertex Connectivity}
+\paragraph{Cut Vertex}
+Removal of a cut vertex creates a subgraph that is not connected. There will be more connected components than before. \(V'\) of \(V\) of \(G=(V,E)\) is a vertex cut. It is the set of vertices that when removed will disconnect the graph. \(G-V'\) is a disconnected graph. Graphs without cut vertices are called non-seperable graphs.
+\paragraph{Vertex Connectivity}
+\(K(G)\) denotes the minimum number of vertices in a vertex cut. A graph is \(k\)-connected if \(K(G)\geq k\).
+\paragraph{Edge Connectivity}
+\(E'\) denotes an edge cut analogous to a vertex cut. \(\lambda(G)\) denotes the minimum number of edges in an edge cut.
+\[ K(G)\leq \lambda(G)\leq \min_{v\in V}\mathrm{deg}(v) \]
+\paragraph{Directed Graphs}
+A directed graph is strongly connected if all vertices are connected to all other vertices with regard the directions of the edges. It is weakly connected if it is connected when treated as a simple graph ignoring the directions.
 
 \subsubsection{Edge Connectivity}
 
