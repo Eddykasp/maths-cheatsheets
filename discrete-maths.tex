@@ -1251,7 +1251,7 @@ A binary search tree is a tree in which every value can be reached by making a c
 \paragraph{Huffman Coding}
 Huffman Coding is a method of encoding data into unique bitstrings for data compression. The frequency of each character is counted and stored. Then, a each character becomes a single node tree, so that there is a forest of trees for all characters. The two trees with the lowest frequency become the children of a new node which becomes their root. The frequency of this new node is the sum of frequencies of the children. This process repeats until there is only one root left. The bitstring encoding for each letter corresponds to the path taken through the tree.
 \paragraph{Game Trees}
-
+Trees can be used to store possible game states. The root node represents the start of the game when nothing has happened yet and every edge represents a possible action. The child nodes correspond to the new state of the game and leaves would represent final positions. For simple games like tic-tac-toe it is easy to construct an entire game tree to let a computer play optimally, but more complex games like chess can make it unviable to construct the entire tree. Partial game trees, which only look a few turns ahead can be used for complex games instead.
 \subsubsection{Tree Traversal}
 
 \paragraph{Pre-order Traversal}
