@@ -1253,13 +1253,13 @@ Huffman Coding is a method of encoding data into unique bitstrings for data comp
 \paragraph{Game Trees}
 Trees can be used to store possible game states. The root node represents the start of the game when nothing has happened yet and every edge represents a possible action. The child nodes correspond to the new state of the game and leaves would represent final positions. For simple games like tic-tac-toe it is easy to construct an entire game tree to let a computer play optimally, but more complex games like chess can make it unviable to construct the entire tree. Partial game trees, which only look a few turns ahead can be used for complex games instead.
 \subsubsection{Tree Traversal}
-
+A traversal is the procedure used for visiting every vertex in an orderd tree. The three methods described below are all recursively defined and differ only in when they visit the root.
 \paragraph{Pre-order Traversal}
-
+First visit the root, then traverse the left child and finally the right child.
 \paragraph{In-order Traversal}
-
+First traverse the left child, then visit the root and finally travers the right child.
 \paragraph{Post-order Traversal}
-
+First traverse the left child, then traverse the right child and finally visit the root.
 \paragraph{Expression Trees}
 
 \subsubsection{Spanning Trees}
