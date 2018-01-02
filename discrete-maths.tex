@@ -1249,7 +1249,7 @@ The elements in an ordered rooted tree are ordered from top to bottom and from l
 \paragraph{Binary Search Trees}
 A binary search tree is a tree in which every value can be reached by making a comparison at each node and moving to either the left child if the desired value is smaller than the current node or to the right child if it is larger. Constructing a binary search tree is a form of sorting values. The number of permutations in a list of length \(n\) is \(n!\). The minimum number of binary comparisons that must be made is therefore \(\log_2(n!)\). The best case time complexity for sorting algorithms based on binary comparisons is therefore \(\Omega(n\log n)\).
 \paragraph{Huffman Coding}
-
+Huffman Coding is a method of encoding data into unique bitstrings for data compression. The frequency of each character is counted and stored. Then, a each character becomes a single node tree, so that there is a forest of trees for all characters. The two trees with the lowest frequency become the children of a new node which becomes their root. The frequency of this new node is the sum of frequencies of the children. This process repeats until there is only one root left. The bitstring encoding for each letter corresponds to the path taken through the tree.
 \paragraph{Game Trees}
 
 \subsubsection{Tree Traversal}
