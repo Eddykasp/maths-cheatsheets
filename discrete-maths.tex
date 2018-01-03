@@ -573,6 +573,7 @@ When elements of a set have some notion of equivalence they can be partitioned i
 In set partitioned into equivalent classes \(x\) is equivalent to \(y\) if and only if \(x\) and \(y\) are in the same equivalence class.
 \[ x\sim y \leftrightarrow [x]=[y] \leftrightarrow [x]\cap[y]\not=\varnothing \]
 
+\newpage
 \subsubsection{Partition of a set}
 A set can be partitioned into a many disjoint non-empty subsets. The union of these subsets is the original set.
 \[ S = \bigcup_i A_i \]
@@ -590,6 +591,7 @@ If all elements in a set are comparable, then it is known as a totally ordered s
 \paragraph{Well Ordered Set}
 If the set contains a least element then it is known as a well ordered set.
 
+\newpage
 \subsection{Functions}
 A special kind of relation is a function. A function is a subset of \(A\times B\) with the restriction that no two elements may have the same first element.
 \[ \forall x\left[x\in A\rightarrow \exists y\left(y\in B\land (x,y)\in f\right)\right] \land \forall x,y_1,y_2\left[\left((x,y_1)\in f\land(x,y_2)\in f\right)\rightarrow y_1 = y_2 \right] \]
@@ -601,7 +603,7 @@ Each element of \(A\) is assigned to exactly to exactly one element \(B\).
 In this case the set \(A\) is the domain of the function and the set \(B\) is the co-domain. The range is a subset of the co-domain and contains all the elements of \(B\) that \(f\) actually maps to.
 
 \begin{center}
-\begin{tikzpicture}[scale=0.75]
+\begin{tikzpicture}[scale=0.65]
     \def\circleOne{(1,1) circle [radius=0.4]}
     \def\circleTwo{(1,2) circle [radius=0.4]}
     \def\circleThree{(1,3) circle [radius=0.4]}
@@ -705,6 +707,7 @@ A bijection is a function, which is both injective and surjective.
 \end{tikzpicture}
 \end{center}
 
+\newpage
 \subsubsection{Inverse Function}
 If the function \(f\) is bijective then it has an inverse. The inverse of \(f\) is denoted as \(f^{-1}\).
 
@@ -763,6 +766,8 @@ Given the functions \(f:B\rightarrow C\) and \(g:A\rightarrow B\), the compositi
     \node [above] at (5, 3.2){\(f\left(g(a)\right)\)};
 \end{tikzpicture}
 \end{center}
+
+\newpage
 \subsection{Relational Alegebra}
 Relational algebra defines additional operators for operations between two relations. This is used in relational databases, where a relation is a table and the tables attributes are the relation's sets. Each row in the below tables is a tuple of the relations.
 \begin{multicols}{2}
@@ -865,7 +870,7 @@ If \(A\) is a subset of \(V\), then \(N(A)\) is the set of all vertices that are
 \subsubsection{Degree of a Vertex}
 \paragraph{Undirected Graphs}
 In an undirected graph, the degree of a vertex \(\mathrm{deg}(v)\) denotes the number of edges incident with the vertice. Loops contribute \(2\) to the degree.
-\subparagraph{Handshaking Theorem}
+\paragraph{Handshaking Theorem}
 If \(G=(V,E)\) is an undirected graph with \(m\) edges, then every new edge increases the degree of two vertices by one.
 \[ 2m = \sum_{v\in V} \mathrm{deg}(v) \]
 \paragraph{Directed Graphs}
@@ -1262,6 +1267,8 @@ First traverse the left child, then visit the root and finally traverse the righ
 First traverse the left child, then traverse the right child and finally visit the root.
 \paragraph{Expression Trees}
 An example of the application of tree traversals is for expression trees for evaluating mathematical expressions. In an expression tree each internal vertex corresponds to an operator and the leaves correspond to the operands. When this tree is traversed in-order the expression is returned in infix notation. If pre-order traversal is used we get the expression in prefix notation or Polish notation, where parentheses are not necessary to remove ambiguity. Similarly post-order traversal yields postfix notation or reverse Polish notation.
+
+\newpage
 \subsubsection{Spanning Trees}
 A spanning tree of a graph \(G\) is a subgraph of \(G\), which is a tree and contains every vertex in \(G\). Every connected graph has a spanning tree.
 \paragraph{Depth-first Search}
